@@ -10,6 +10,8 @@
 #import "PhoneUserInfoViewController.h"
 @interface PhoneVerificationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnResend;
+@property (strong, nonatomic) IBOutlet UITextField *labelVerification;
+@property (strong, nonatomic) IBOutlet UILabel *labelDetail;
 
 @end
 
@@ -23,6 +25,9 @@
 -(void)setInit{
     [super setInit];
     _btnResend.layer.cornerRadius = 6.0f;
+    [self setRegisterUITextField:_labelVerification];
+    _labelVerification.delegate = self;
+    _labelDetail.attributedText = [self stringChange:@"请输入四位发送至您号码的验证数字" Color:[UIColor redColor] Range:NSMakeRange(3,2)];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -49,5 +54,11 @@
     [self.waitingAnimation startAnimation];
     [self.waitingAnimation stopAnimation];
 }
-
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    textField.layer.borderColor = [UIColor borderColor1].CGColor;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    textField.layer.borderColor = [UIColor borderColor2].CGColor;
+    [textField resignFirstResponder];
+}
 @end

@@ -62,7 +62,7 @@
     data = [NSArray arrayWithObjects:@{@"image":@"main_map_rent",@"title":@"同济大学四平路校区",@"detail":@"距离您最近的租赁点"}, @{@"image":@"main_map_rent2",@"title":@"静安希尔顿酒店",@"detail":@"距离您最近的充电桩"}, @{@"image":@"main_map_search",@"title":@"查找更多租赁点或充电桩"},nil];
 }
 
--(void)viewWillAppear:(BOOL)animated{
+-(void)viewDidAppear:(BOOL)animated{
     [self setMainNavBar];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

@@ -17,4 +17,6 @@
 - (void)showTabBar;
 - (void)hideTabBar;
 -(void)setMainNavBar;
+-(void)setRegisterUITextField:(UITextField *)uiTextField;
+-(void)setLoginUITextField:(UITextField *)uiTextField;
 @end

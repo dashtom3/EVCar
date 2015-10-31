@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1280E8621BDF68AF00F7B4BE /* UserTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8611BDF68AF00F7B4BE /* UserTextField.m */; };
-		1280E8651BDF715D00F7B4BE /* LoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8641BDF715D00F7B4BE /* LoginTextField.m */; };
 		1280E8691BE0AE5900F7B4BE /* MainTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8681BE0AE5900F7B4BE /* MainTabbarViewController.m */; };
 		1280E86F1BE0BDC500F7B4BE /* RentTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E86E1BE0BDC500F7B4BE /* RentTabViewController.m */; };
-		1280E8721BE0BE5F00F7B4BE /* OrderTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8711BE0BE5F00F7B4BE /* OrderTabViewController.m */; };
 		1280E8751BE0BE7A00F7B4BE /* MessageTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8741BE0BE7A00F7B4BE /* MessageTabViewController.m */; };
 		1280E8781BE0BE8A00F7B4BE /* UserTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8771BE0BE8A00F7B4BE /* UserTabViewController.m */; };
 		1280E87F1BE0FD8E00F7B4BE /* RentTabViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E87D1BE0FD8E00F7B4BE /* RentTabViewCell.m */; };
@@ -38,6 +35,7 @@
 		1280E8B21BE3B9B800F7B4BE /* RentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8B11BE3B9B800F7B4BE /* RentViewController.m */; };
 		1280E8BA1BE3BB3E00F7B4BE /* CarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8B91BE3BB3E00F7B4BE /* CarView.m */; };
 		1280E8BC1BE3BB5500F7B4BE /* CarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1280E8BB1BE3BB5500F7B4BE /* CarView.xib */; };
+		1280E8C01BE4E08B00F7B4BE /* OrderTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8BF1BE4E08B00F7B4BE /* OrderTabViewController.m */; };
 		129D5BEA1BD6233D001CBD69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D5BE91BD6233D001CBD69 /* main.m */; };
 		129D5BED1BD6233D001CBD69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D5BEC1BD6233D001CBD69 /* AppDelegate.m */; };
 		129D5BF01BD6233D001CBD69 /* EVCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 129D5BEE1BD6233D001CBD69 /* EVCar.xcdatamodeld */; };
@@ -68,16 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1280E8601BDF68AF00F7B4BE /* UserTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTextField.h; sourceTree = "<group>"; };
-		1280E8611BDF68AF00F7B4BE /* UserTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTextField.m; sourceTree = "<group>"; };
-		1280E8631BDF715D00F7B4BE /* LoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTextField.h; sourceTree = "<group>"; };
-		1280E8641BDF715D00F7B4BE /* LoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTextField.m; sourceTree = "<group>"; };
 		1280E8671BE0AE5900F7B4BE /* MainTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabbarViewController.h; sourceTree = "<group>"; };
 		1280E8681BE0AE5900F7B4BE /* MainTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabbarViewController.m; sourceTree = "<group>"; };
 		1280E86D1BE0BDC500F7B4BE /* RentTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentTabViewController.h; sourceTree = "<group>"; };
 		1280E86E1BE0BDC500F7B4BE /* RentTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentTabViewController.m; sourceTree = "<group>"; };
-		1280E8701BE0BE5F00F7B4BE /* OrderTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTabViewController.h; sourceTree = "<group>"; };
-		1280E8711BE0BE5F00F7B4BE /* OrderTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTabViewController.m; sourceTree = "<group>"; };
 		1280E8731BE0BE7A00F7B4BE /* MessageTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTabViewController.h; sourceTree = "<group>"; };
 		1280E8741BE0BE7A00F7B4BE /* MessageTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTabViewController.m; sourceTree = "<group>"; };
 		1280E8761BE0BE8A00F7B4BE /* UserTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTabViewController.h; sourceTree = "<group>"; };
@@ -114,6 +106,8 @@
 		1280E8B91BE3BB3E00F7B4BE /* CarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarView.m; sourceTree = "<group>"; };
 		1280E8BB1BE3BB5500F7B4BE /* CarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarView.xib; sourceTree = "<group>"; };
 		1280E8BD1BE4BCD100F7B4BE /* ECarConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECarConstant.h; sourceTree = "<group>"; };
+		1280E8BE1BE4E08B00F7B4BE /* OrderTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTabViewController.h; sourceTree = "<group>"; };
+		1280E8BF1BE4E08B00F7B4BE /* OrderTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTabViewController.m; sourceTree = "<group>"; };
 		129D5BE41BD6233D001CBD69 /* EVCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		129D5BE81BD6233D001CBD69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		129D5BE91BD6233D001CBD69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -186,10 +180,10 @@
 				1280E8681BE0AE5900F7B4BE /* MainTabbarViewController.m */,
 				1280E86D1BE0BDC500F7B4BE /* RentTabViewController.h */,
 				1280E86E1BE0BDC500F7B4BE /* RentTabViewController.m */,
-				1280E8701BE0BE5F00F7B4BE /* OrderTabViewController.h */,
-				1280E8711BE0BE5F00F7B4BE /* OrderTabViewController.m */,
 				1280E8731BE0BE7A00F7B4BE /* MessageTabViewController.h */,
 				1280E8741BE0BE7A00F7B4BE /* MessageTabViewController.m */,
+				1280E8BE1BE4E08B00F7B4BE /* OrderTabViewController.h */,
+				1280E8BF1BE4E08B00F7B4BE /* OrderTabViewController.m */,
 				1280E8761BE0BE8A00F7B4BE /* UserTabViewController.h */,
 				1280E8771BE0BE8A00F7B4BE /* UserTabViewController.m */,
 				1280E8A31BE324BD00F7B4BE /* SearchViewController.h */,
@@ -325,10 +319,6 @@
 				12A3F5131BD8D8EF00A4EB75 /* WaitingAnimation.xib */,
 				12B54E541BDB653900D2D14F /* BaseViewController.h */,
 				12B54E551BDB653900D2D14F /* BaseViewController.m */,
-				1280E8601BDF68AF00F7B4BE /* UserTextField.h */,
-				1280E8611BDF68AF00F7B4BE /* UserTextField.m */,
-				1280E8631BDF715D00F7B4BE /* LoginTextField.h */,
-				1280E8641BDF715D00F7B4BE /* LoginTextField.m */,
 				1280E8BD1BE4BCD100F7B4BE /* ECarConstant.h */,
 			);
 			name = Common;
@@ -462,13 +452,10 @@
 				1280E8A51BE324BD00F7B4BE /* SearchViewController.m in Sources */,
 				1280E87F1BE0FD8E00F7B4BE /* RentTabViewCell.m in Sources */,
 				129D5BF31BD6233D001CBD69 /* ViewController.m in Sources */,
-				1280E8651BDF715D00F7B4BE /* LoginTextField.m in Sources */,
 				1280E8BA1BE3BB3E00F7B4BE /* CarView.m in Sources */,
-				1280E8621BDF68AF00F7B4BE /* UserTextField.m in Sources */,
 				1280E8751BE0BE7A00F7B4BE /* MessageTabViewController.m in Sources */,
 				129D5C1F1BD677B8001CBD69 /* PhoneUserInfoViewController.m in Sources */,
 				1280E8B21BE3B9B800F7B4BE /* RentViewController.m in Sources */,
-				1280E8721BE0BE5F00F7B4BE /* OrderTabViewController.m in Sources */,
 				1280E8781BE0BE8A00F7B4BE /* UserTabViewController.m in Sources */,
 				129D5BEA1BD6233D001CBD69 /* main.m in Sources */,
 				12A3F50D1BD8C8E300A4EB75 /* UIColor+EVCarColor.m in Sources */,
@@ -476,6 +463,7 @@
 				1280E8AE1BE33C9A00F7B4BE /* RentViewCell.m in Sources */,
 				1280E8691BE0AE5900F7B4BE /* MainTabbarViewController.m in Sources */,
 				129D5C131BD63CD4001CBD69 /* PhoneLoginViewController.m in Sources */,
+				1280E8C01BE4E08B00F7B4BE /* OrderTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

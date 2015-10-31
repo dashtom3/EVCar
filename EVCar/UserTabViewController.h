@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface UserTabViewController : BaseViewController
+@interface UserTabViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

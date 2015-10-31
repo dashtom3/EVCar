@@ -32,12 +32,12 @@
 }
 -(void)setInit{
     [super setInit];
-    [self.navigationController setNavigationBarHidden:false];
+    
     
     UIBarButtonItem *leftBar = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"base_back"] style:UIBarButtonItemStylePlain target:self action:@selector(backToMainView)];
     self.navigationItem.leftBarButtonItem = leftBar;
     self.navigationItem.rightBarButtonItem = nil;
-    self.title = @"查找更多";
+   
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -48,6 +48,13 @@
     [_tableView registerNib:[UINib nibWithNibName:@"RentTabViewCell" bundle:nil] forCellReuseIdentifier:@"RentCell"];
     data = [NSArray arrayWithObjects:@{@"image":@"main_map_rent",@"title":@"同济大学四平路校区",@"detail":@"上海市四平路1239号"}, @{@"image":@"main_map_rent",@"title":@"希尔顿酒店",@"detail":@"上海市松花江路271号"}, @{@"image":@"main_map_rent",@"title":@"浦东利卡儿酒店",@"detail":@"上海市世纪大道8号"},nil];
     
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [self setTitle:@"查找更多" ];
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
+    [self.navigationController setNavigationBarHidden:false];
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
 }
 //-(void)setBtnView:(UIButton *)btn Image:(NSString *)image Type:(NSString *)type Content:(NSString *)content{
 //}

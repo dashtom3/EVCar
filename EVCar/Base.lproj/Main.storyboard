@@ -223,6 +223,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnResend" destination="u4g-71-mlL" id="JTc-Nt-y45"/>
+                        <outlet property="labelDetail" destination="MyN-j5-0Kq" id="5an-g4-Xuv"/>
+                        <outlet property="labelVerification" destination="P8P-N7-9xT" id="9Ly-Fv-BUk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4q0-my-Djd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -459,9 +461,28 @@
                     <view key="view" contentMode="scaleToFill" id="TBH-Bh-NX4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="O1V-ve-pom">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="36q-KU-Hsc" id="RUY-1N-uh9"/>
+                                    <outlet property="delegate" destination="36q-KU-Hsc" id="OL7-4J-6nh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="O1V-ve-pom" secondAttribute="bottom" id="2aU-wa-Iky"/>
+                            <constraint firstItem="O1V-ve-pom" firstAttribute="top" secondItem="TBH-Bh-NX4" secondAttribute="top" id="AUL-Ec-QK7"/>
+                            <constraint firstItem="O1V-ve-pom" firstAttribute="leading" secondItem="TBH-Bh-NX4" secondAttribute="leading" id="EQN-Uy-j7Y"/>
+                            <constraint firstAttribute="trailing" secondItem="O1V-ve-pom" secondAttribute="trailing" id="NKu-Ue-IbV"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="O1V-ve-pom" id="GwM-8g-xUb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3Q-vm-L8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -648,6 +669,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnLoadDirverPic" destination="x0u-hV-br4" id="F5T-tm-dVQ"/>
+                        <outlet property="labelDetail" destination="123-3U-ADr" id="BjN-7v-Gnl"/>
                         <outlet property="textDriverLisence" destination="L3A-Mf-5KB" id="A6p-h8-27V"/>
                         <outlet property="textEmail" destination="kxN-sC-dDH" id="UPL-qN-NPB"/>
                         <outlet property="textRealName" destination="pfp-fV-LNg" id="31a-sp-5BQ"/>
@@ -692,9 +714,14 @@
                                 <rect key="frame" x="0.0" y="52" width="375" height="615"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9P0-Ry-4wf" id="f5Z-tJ-HLn"/>
+                                    <outlet property="delegate" destination="9P0-Ry-4wf" id="jJR-Sp-DF4"/>
+                                </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="18K-KR-LHg">
                                 <rect key="frame" x="76" y="74" width="222" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="222" id="4cD-Xy-fFj"/>
                                     <constraint firstAttribute="height" constant="30" id="B9G-Dz-zkm"/>
@@ -705,7 +732,7 @@
                                 </segments>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="segmentChange:" destination="9P0-Ry-4wf" eventType="valueChanged" id="BfM-u0-eio"/>
+                                    <action selector="valueChanged:" destination="9P0-Ry-4wf" eventType="valueChanged" id="7Oa-Yi-6th"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -727,8 +754,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="segmentOrder" destination="18K-KR-LHg" id="SAj-ks-Lwh"/>
-                        <outlet property="tableView" destination="Odc-g3-ziP" id="CnF-YE-gZH"/>
+                        <outlet property="segmentOrder" destination="18K-KR-LHg" id="mm8-f9-j53"/>
+                        <outlet property="tableView" destination="Odc-g3-ziP" id="Ykp-fJ-Qqs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXa-zN-ylp" userLabel="First Responder" sceneMemberID="firstResponder"/>

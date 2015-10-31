@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
-@interface PhoneVerificationViewController : BaseViewController
+@interface PhoneVerificationViewController : BaseViewController<UITextFieldDelegate>
 
 @end

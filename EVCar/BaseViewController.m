@@ -30,8 +30,8 @@
     self.navigationItem.rightBarButtonItem = rightBarButton;
     
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    _waitingAnimation = [[WaitingAnimation alloc]initWithNum:0 WithMainFrame:self.view.frame];
-    [self.view addSubview:_waitingAnimation];
+    //_waitingAnimation = [[WaitingAnimation alloc]initWithNum:0 WithMainFrame:self.view.frame];
+    //[self.view addSubview:_waitingAnimation];
 }
 -(NSMutableAttributedString *)stringChange:(NSString *)text Color:(UIColor *)color Range:(NSRange )range{
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:text];
@@ -75,6 +75,23 @@
     [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     [self.navigationController setNavigationBarHidden:false];
+}
+-(void)setRegisterUITextField:(UITextField *)uiTextField{
+    uiTextField.layer.cornerRadius = 6.0f;
+    uiTextField.layer.borderWidth = 0.6;
+    [uiTextField.layer setBorderColor:[UIColor borderColor2].CGColor];
+    uiTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 16, 0)];
+    uiTextField.leftViewMode = UITextFieldViewModeAlways;
+    uiTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+}
+-(void)setLoginUITextField:(UITextField *)uiTextField{
+    uiTextField.layer.cornerRadius = 6.0f;
+    uiTextField.layer.borderWidth = 0.6;
+    [uiTextField.layer setBorderColor:[UIColor borderColor2].CGColor];
+    uiTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 16, 0)];
+    uiTextField.leftViewMode = UITextFieldViewModeAlways;
+    uiTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    uiTextField.alpha = 0.55;
 }
 /*
 #pragma mark - Navigation

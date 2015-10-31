@@ -46,7 +46,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RentViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RentViewCell"];
     if(cell){
-        if(indexPath.row == 0 || indexPath.row == 4){
+        if(indexPath.row == 0 || indexPath.row == 3){
             [cell setImage:[_data[indexPath.row] valueForKey:@"image"] Title:[_data[indexPath.row] valueForKey:@"title"] Detail:[_data[indexPath.row] valueForKey:@"detail"] Type:0];
         }else{
             [cell setImage:[_data[indexPath.row] valueForKey:@"image"] Title:[_data[indexPath.row] valueForKey:@"title"] Detail:[_data[indexPath.row] valueForKey:@"detail"] Type:1];

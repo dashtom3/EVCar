@@ -7,7 +7,6 @@
 //
 
 #import "PhoneLoginViewController.h"
-#import "LoginTextField.h"
 @interface PhoneLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *password;
@@ -31,8 +30,10 @@
 }
 -(void)setInit{
     [super setInit];
-    [LoginTextField setSingletypeDelegate:_phoneNumber];
-    [LoginTextField setSingletypeDelegate:_password];
+    [self setLoginUITextField:_phoneNumber];
+    [self setLoginUITextField:_password];
+    _phoneNumber.delegate =self;
+    _password.delegate = self;
 }
 /*
 #pragma mark - Navigation
@@ -47,12 +48,22 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 - (IBAction)loginRequest:(id)sender {
-    [self.waitingAnimation startAnimation];
-    [self.waitingAnimation stopAnimation];
-    
+    //[self.waitingAnimation startAnimation];
+    //[self.waitingAnimation stopAnimation];
     [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"tabBarController"] animated:YES];
 }
 - (IBAction)forgetPassword:(id)sender {
     
+}
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    textField.alpha = 1;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    textField.alpha = 0.55;
+    [textField resignFirstResponder];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return true;
 }
 @end

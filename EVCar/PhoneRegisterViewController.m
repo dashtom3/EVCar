@@ -8,7 +8,6 @@
 
 #import "PhoneRegisterViewController.h"
 #import "PhoneVerificationViewController.h"
-#import "UserTextField.h"
 @interface PhoneRegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *password;
@@ -41,8 +40,10 @@
 */
 -(void)setInit{
     [super setInit];
-    [UserTextField setSingletypeDelegate:_phoneNumber];
-    [UserTextField setSingletypeDelegate:_password];
+    [self setRegisterUITextField:_phoneNumber];
+    [self setRegisterUITextField:_password];
+    _phoneNumber.delegate = self;
+    _password.delegate = self;
 }
 - (IBAction)backToViewController:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
@@ -50,8 +51,8 @@
 
 - (IBAction)goToVerificationController:(id)sender {
     //发送手机验证
-    [self.waitingAnimation startAnimation];
-    [self.waitingAnimation stopAnimation];
+    //[self.waitingAnimation startAnimation];
+    //[self.waitingAnimation stopAnimation];
     PhoneVerificationViewController *pvvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"phoneVerification"];
     [self.navigationController pushViewController:pvvc animated:YES];
 }
@@ -59,5 +60,15 @@
 - (IBAction)goToServiceContent:(id)sender {
     
 }
-
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    textField.layer.borderColor = [UIColor borderColor1].CGColor;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    textField.layer.borderColor = [UIColor borderColor2].CGColor;
+    [textField resignFirstResponder];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return true;
+}
 @end
