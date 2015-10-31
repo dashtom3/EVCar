@@ -7,6 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1280E8621BDF68AF00F7B4BE /* UserTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8611BDF68AF00F7B4BE /* UserTextField.m */; };
+		1280E8651BDF715D00F7B4BE /* LoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8641BDF715D00F7B4BE /* LoginTextField.m */; };
+		1280E8691BE0AE5900F7B4BE /* MainTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8681BE0AE5900F7B4BE /* MainTabbarViewController.m */; };
+		1280E86F1BE0BDC500F7B4BE /* RentTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E86E1BE0BDC500F7B4BE /* RentTabViewController.m */; };
+		1280E8721BE0BE5F00F7B4BE /* OrderTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8711BE0BE5F00F7B4BE /* OrderTabViewController.m */; };
+		1280E8751BE0BE7A00F7B4BE /* MessageTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8741BE0BE7A00F7B4BE /* MessageTabViewController.m */; };
+		1280E8781BE0BE8A00F7B4BE /* UserTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8771BE0BE8A00F7B4BE /* UserTabViewController.m */; };
+		1280E87F1BE0FD8E00F7B4BE /* RentTabViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E87D1BE0FD8E00F7B4BE /* RentTabViewCell.m */; };
+		1280E8801BE0FD8E00F7B4BE /* RentTabViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1280E87E1BE0FD8E00F7B4BE /* RentTabViewCell.xib */; };
+		1280E8821BE1F59400F7B4BE /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E8811BE1F59400F7B4BE /* BaiduMapAPI_Base.framework */; };
+		1280E8841BE1F79300F7B4BE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E8831BE1F79300F7B4BE /* CoreLocation.framework */; };
+		1280E8861BE1F79E00F7B4BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E8851BE1F79E00F7B4BE /* QuartzCore.framework */; };
+		1280E8881BE1F7AC00F7B4BE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E8871BE1F7AC00F7B4BE /* OpenGLES.framework */; };
+		1280E88A1BE1F7B400F7B4BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E8891BE1F7B400F7B4BE /* SystemConfiguration.framework */; };
+		1280E88C1BE1F7BD00F7B4BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E88B1BE1F7BD00F7B4BE /* CoreGraphics.framework */; };
+		1280E88E1BE1F7C700F7B4BE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E88D1BE1F7C700F7B4BE /* Security.framework */; };
+		1280E8901BE1F7E400F7B4BE /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E88F1BE1F7E400F7B4BE /* libsqlite3.0.dylib */; };
+		1280E8921BE1F7ED00F7B4BE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E8911BE1F7ED00F7B4BE /* CoreTelephony.framework */; };
+		1280E8941BE1F7FC00F7B4BE /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E8931BE1F7FC00F7B4BE /* libstdc++.6.0.9.dylib */; };
+		1280E8981BE1F93D00F7B4BE /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1280E8971BE1F93D00F7B4BE /* mapapi.bundle */; };
+		1280E89A1BE21D9300F7B4BE /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280E8991BE21D9300F7B4BE /* BaiduMapAPI_Map.framework */; };
+		1280E89E1BE229AA00F7B4BE /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E89D1BE229AA00F7B4BE /* SearchView.m */; };
+		1280E8A21BE22A3100F7B4BE /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1280E8A11BE22A3100F7B4BE /* SearchView.xib */; };
+		1280E8A51BE324BD00F7B4BE /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8A41BE324BD00F7B4BE /* SearchViewController.m */; };
+		1280E8A81BE339B800F7B4BE /* RentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8A71BE339B800F7B4BE /* RentView.m */; };
+		1280E8AA1BE339C900F7B4BE /* RentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1280E8A91BE339C900F7B4BE /* RentView.xib */; };
+		1280E8AE1BE33C9A00F7B4BE /* RentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8AC1BE33C9A00F7B4BE /* RentViewCell.m */; };
+		1280E8AF1BE33C9A00F7B4BE /* RentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1280E8AD1BE33C9A00F7B4BE /* RentViewCell.xib */; };
+		1280E8B21BE3B9B800F7B4BE /* RentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8B11BE3B9B800F7B4BE /* RentViewController.m */; };
+		1280E8BA1BE3BB3E00F7B4BE /* CarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8B91BE3BB3E00F7B4BE /* CarView.m */; };
+		1280E8BC1BE3BB5500F7B4BE /* CarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1280E8BB1BE3BB5500F7B4BE /* CarView.xib */; };
 		129D5BEA1BD6233D001CBD69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D5BE91BD6233D001CBD69 /* main.m */; };
 		129D5BED1BD6233D001CBD69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D5BEC1BD6233D001CBD69 /* AppDelegate.m */; };
 		129D5BF01BD6233D001CBD69 /* EVCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 129D5BEE1BD6233D001CBD69 /* EVCar.xcdatamodeld */; };
@@ -15,6 +46,15 @@
 		129D5BF81BD6233D001CBD69 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 129D5BF71BD6233D001CBD69 /* Images.xcassets */; };
 		129D5BFB1BD6233D001CBD69 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129D5BF91BD6233D001CBD69 /* LaunchScreen.xib */; };
 		129D5C071BD6233D001CBD69 /* EVCarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D5C061BD6233D001CBD69 /* EVCarTests.m */; };
+		129D5C131BD63CD4001CBD69 /* PhoneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D5C121BD63CD4001CBD69 /* PhoneLoginViewController.m */; };
+		129D5C161BD63D18001CBD69 /* PhoneRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D5C151BD63D18001CBD69 /* PhoneRegisterViewController.m */; };
+		129D5C1C1BD64FA0001CBD69 /* PhoneVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D5C1B1BD64FA0001CBD69 /* PhoneVerificationViewController.m */; };
+		129D5C1F1BD677B8001CBD69 /* PhoneUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D5C1E1BD677B8001CBD69 /* PhoneUserInfoViewController.m */; };
+		12A3F50D1BD8C8E300A4EB75 /* UIColor+EVCarColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A3F50C1BD8C8E300A4EB75 /* UIColor+EVCarColor.m */; };
+		12A3F5121BD8D8DA00A4EB75 /* WaitingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A3F5111BD8D8DA00A4EB75 /* WaitingAnimation.m */; };
+		12A3F5141BD8D8EF00A4EB75 /* WaitingAnimation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12A3F5131BD8D8EF00A4EB75 /* WaitingAnimation.xib */; };
+		12B54E531BDB52D400D2D14F /* httpRequest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12B54E521BDB52D400D2D14F /* httpRequest.mm */; };
+		12B54E561BDB653900D2D14F /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B54E551BDB653900D2D14F /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +68,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1280E8601BDF68AF00F7B4BE /* UserTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTextField.h; sourceTree = "<group>"; };
+		1280E8611BDF68AF00F7B4BE /* UserTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTextField.m; sourceTree = "<group>"; };
+		1280E8631BDF715D00F7B4BE /* LoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTextField.h; sourceTree = "<group>"; };
+		1280E8641BDF715D00F7B4BE /* LoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTextField.m; sourceTree = "<group>"; };
+		1280E8671BE0AE5900F7B4BE /* MainTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabbarViewController.h; sourceTree = "<group>"; };
+		1280E8681BE0AE5900F7B4BE /* MainTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabbarViewController.m; sourceTree = "<group>"; };
+		1280E86D1BE0BDC500F7B4BE /* RentTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentTabViewController.h; sourceTree = "<group>"; };
+		1280E86E1BE0BDC500F7B4BE /* RentTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentTabViewController.m; sourceTree = "<group>"; };
+		1280E8701BE0BE5F00F7B4BE /* OrderTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTabViewController.h; sourceTree = "<group>"; };
+		1280E8711BE0BE5F00F7B4BE /* OrderTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTabViewController.m; sourceTree = "<group>"; };
+		1280E8731BE0BE7A00F7B4BE /* MessageTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTabViewController.h; sourceTree = "<group>"; };
+		1280E8741BE0BE7A00F7B4BE /* MessageTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTabViewController.m; sourceTree = "<group>"; };
+		1280E8761BE0BE8A00F7B4BE /* UserTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTabViewController.h; sourceTree = "<group>"; };
+		1280E8771BE0BE8A00F7B4BE /* UserTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTabViewController.m; sourceTree = "<group>"; };
+		1280E87C1BE0FD8E00F7B4BE /* RentTabViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentTabViewCell.h; sourceTree = "<group>"; };
+		1280E87D1BE0FD8E00F7B4BE /* RentTabViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentTabViewCell.m; sourceTree = "<group>"; };
+		1280E87E1BE0FD8E00F7B4BE /* RentTabViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RentTabViewCell.xib; sourceTree = "<group>"; };
+		1280E8811BE1F59400F7B4BE /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
+		1280E8831BE1F79300F7B4BE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1280E8851BE1F79E00F7B4BE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1280E8871BE1F7AC00F7B4BE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		1280E8891BE1F7B400F7B4BE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1280E88B1BE1F7BD00F7B4BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1280E88D1BE1F7C700F7B4BE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1280E88F1BE1F7E400F7B4BE /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		1280E8911BE1F7ED00F7B4BE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1280E8931BE1F7FC00F7B4BE /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		1280E8971BE1F93D00F7B4BE /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		1280E8991BE21D9300F7B4BE /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
+		1280E89C1BE229AA00F7B4BE /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		1280E89D1BE229AA00F7B4BE /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
+		1280E8A11BE22A3100F7B4BE /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		1280E8A31BE324BD00F7B4BE /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		1280E8A41BE324BD00F7B4BE /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		1280E8A61BE339B800F7B4BE /* RentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentView.h; sourceTree = "<group>"; };
+		1280E8A71BE339B800F7B4BE /* RentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentView.m; sourceTree = "<group>"; };
+		1280E8A91BE339C900F7B4BE /* RentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RentView.xib; sourceTree = "<group>"; };
+		1280E8AB1BE33C9A00F7B4BE /* RentViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentViewCell.h; sourceTree = "<group>"; };
+		1280E8AC1BE33C9A00F7B4BE /* RentViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentViewCell.m; sourceTree = "<group>"; };
+		1280E8AD1BE33C9A00F7B4BE /* RentViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RentViewCell.xib; sourceTree = "<group>"; };
+		1280E8B01BE3B9B800F7B4BE /* RentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentViewController.h; sourceTree = "<group>"; };
+		1280E8B11BE3B9B800F7B4BE /* RentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentViewController.m; sourceTree = "<group>"; };
+		1280E8B81BE3BB3E00F7B4BE /* CarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarView.h; sourceTree = "<group>"; };
+		1280E8B91BE3BB3E00F7B4BE /* CarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarView.m; sourceTree = "<group>"; };
+		1280E8BB1BE3BB5500F7B4BE /* CarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarView.xib; sourceTree = "<group>"; };
+		1280E8BD1BE4BCD100F7B4BE /* ECarConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECarConstant.h; sourceTree = "<group>"; };
 		129D5BE41BD6233D001CBD69 /* EVCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		129D5BE81BD6233D001CBD69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		129D5BE91BD6233D001CBD69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +128,25 @@
 		129D5C001BD6233D001CBD69 /* EVCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		129D5C051BD6233D001CBD69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		129D5C061BD6233D001CBD69 /* EVCarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVCarTests.m; sourceTree = "<group>"; };
+		129D5C111BD63CD4001CBD69 /* PhoneLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneLoginViewController.h; sourceTree = "<group>"; };
+		129D5C121BD63CD4001CBD69 /* PhoneLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginViewController.m; sourceTree = "<group>"; };
+		129D5C141BD63D18001CBD69 /* PhoneRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneRegisterViewController.h; sourceTree = "<group>"; };
+		129D5C151BD63D18001CBD69 /* PhoneRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneRegisterViewController.m; sourceTree = "<group>"; };
+		129D5C1A1BD64FA0001CBD69 /* PhoneVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneVerificationViewController.h; sourceTree = "<group>"; };
+		129D5C1B1BD64FA0001CBD69 /* PhoneVerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneVerificationViewController.m; sourceTree = "<group>"; };
+		129D5C1D1BD677B8001CBD69 /* PhoneUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneUserInfoViewController.h; sourceTree = "<group>"; };
+		129D5C1E1BD677B8001CBD69 /* PhoneUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneUserInfoViewController.m; sourceTree = "<group>"; };
+		12A3F50B1BD8C8E300A4EB75 /* UIColor+EVCarColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EVCarColor.h"; sourceTree = "<group>"; };
+		12A3F50C1BD8C8E300A4EB75 /* UIColor+EVCarColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EVCarColor.m"; sourceTree = "<group>"; };
+		12A3F50E1BD8CA3200A4EB75 /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		12A3F50F1BD8CB9600A4EB75 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		12A3F5101BD8D8DA00A4EB75 /* WaitingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitingAnimation.h; sourceTree = "<group>"; };
+		12A3F5111BD8D8DA00A4EB75 /* WaitingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitingAnimation.m; sourceTree = "<group>"; };
+		12A3F5131BD8D8EF00A4EB75 /* WaitingAnimation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaitingAnimation.xib; sourceTree = "<group>"; };
+		12B54E511BDB52D400D2D14F /* httpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = httpRequest.h; sourceTree = "<group>"; };
+		12B54E521BDB52D400D2D14F /* httpRequest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = httpRequest.mm; sourceTree = "<group>"; };
+		12B54E541BDB653900D2D14F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		12B54E551BDB653900D2D14F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +154,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1280E89A1BE21D9300F7B4BE /* BaiduMapAPI_Map.framework in Frameworks */,
+				1280E8941BE1F7FC00F7B4BE /* libstdc++.6.0.9.dylib in Frameworks */,
+				1280E8921BE1F7ED00F7B4BE /* CoreTelephony.framework in Frameworks */,
+				1280E8901BE1F7E400F7B4BE /* libsqlite3.0.dylib in Frameworks */,
+				1280E88E1BE1F7C700F7B4BE /* Security.framework in Frameworks */,
+				1280E88C1BE1F7BD00F7B4BE /* CoreGraphics.framework in Frameworks */,
+				1280E88A1BE1F7B400F7B4BE /* SystemConfiguration.framework in Frameworks */,
+				1280E8881BE1F7AC00F7B4BE /* OpenGLES.framework in Frameworks */,
+				1280E8861BE1F79E00F7B4BE /* QuartzCore.framework in Frameworks */,
+				1280E8841BE1F79300F7B4BE /* CoreLocation.framework in Frameworks */,
+				1280E8821BE1F59400F7B4BE /* BaiduMapAPI_Base.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,9 +178,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1280E8661BE0AE3800F7B4BE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1280E89B1BE2289100F7B4BE /* ViewAndCell */,
+				1280E8671BE0AE5900F7B4BE /* MainTabbarViewController.h */,
+				1280E8681BE0AE5900F7B4BE /* MainTabbarViewController.m */,
+				1280E86D1BE0BDC500F7B4BE /* RentTabViewController.h */,
+				1280E86E1BE0BDC500F7B4BE /* RentTabViewController.m */,
+				1280E8701BE0BE5F00F7B4BE /* OrderTabViewController.h */,
+				1280E8711BE0BE5F00F7B4BE /* OrderTabViewController.m */,
+				1280E8731BE0BE7A00F7B4BE /* MessageTabViewController.h */,
+				1280E8741BE0BE7A00F7B4BE /* MessageTabViewController.m */,
+				1280E8761BE0BE8A00F7B4BE /* UserTabViewController.h */,
+				1280E8771BE0BE8A00F7B4BE /* UserTabViewController.m */,
+				1280E8A31BE324BD00F7B4BE /* SearchViewController.h */,
+				1280E8A41BE324BD00F7B4BE /* SearchViewController.m */,
+				1280E8B01BE3B9B800F7B4BE /* RentViewController.h */,
+				1280E8B11BE3B9B800F7B4BE /* RentViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		1280E89B1BE2289100F7B4BE /* ViewAndCell */ = {
+			isa = PBXGroup;
+			children = (
+				1280E87C1BE0FD8E00F7B4BE /* RentTabViewCell.h */,
+				1280E87D1BE0FD8E00F7B4BE /* RentTabViewCell.m */,
+				1280E87E1BE0FD8E00F7B4BE /* RentTabViewCell.xib */,
+				1280E89C1BE229AA00F7B4BE /* SearchView.h */,
+				1280E89D1BE229AA00F7B4BE /* SearchView.m */,
+				1280E8A11BE22A3100F7B4BE /* SearchView.xib */,
+				1280E8A61BE339B800F7B4BE /* RentView.h */,
+				1280E8A71BE339B800F7B4BE /* RentView.m */,
+				1280E8A91BE339C900F7B4BE /* RentView.xib */,
+				1280E8AB1BE33C9A00F7B4BE /* RentViewCell.h */,
+				1280E8AC1BE33C9A00F7B4BE /* RentViewCell.m */,
+				1280E8AD1BE33C9A00F7B4BE /* RentViewCell.xib */,
+				1280E8B81BE3BB3E00F7B4BE /* CarView.h */,
+				1280E8B91BE3BB3E00F7B4BE /* CarView.m */,
+				1280E8BB1BE3BB5500F7B4BE /* CarView.xib */,
+			);
+			name = ViewAndCell;
+			sourceTree = "<group>";
+		};
 		129D5BDB1BD6233D001CBD69 = {
 			isa = PBXGroup;
 			children = (
+				1280E8991BE21D9300F7B4BE /* BaiduMapAPI_Map.framework */,
+				1280E8971BE1F93D00F7B4BE /* mapapi.bundle */,
+				1280E8931BE1F7FC00F7B4BE /* libstdc++.6.0.9.dylib */,
+				1280E8911BE1F7ED00F7B4BE /* CoreTelephony.framework */,
+				1280E88F1BE1F7E400F7B4BE /* libsqlite3.0.dylib */,
+				1280E88D1BE1F7C700F7B4BE /* Security.framework */,
+				1280E88B1BE1F7BD00F7B4BE /* CoreGraphics.framework */,
+				1280E8891BE1F7B400F7B4BE /* SystemConfiguration.framework */,
+				1280E8871BE1F7AC00F7B4BE /* OpenGLES.framework */,
+				1280E8851BE1F79E00F7B4BE /* QuartzCore.framework */,
+				1280E8831BE1F79300F7B4BE /* CoreLocation.framework */,
+				1280E8811BE1F59400F7B4BE /* BaiduMapAPI_Base.framework */,
 				129D5BE61BD6233D001CBD69 /* EVCar */,
 				129D5C031BD6233D001CBD69 /* EVCarTests */,
 				129D5BE51BD6233D001CBD69 /* Products */,
@@ -83,6 +255,10 @@
 		129D5BE61BD6233D001CBD69 /* EVCar */ = {
 			isa = PBXGroup;
 			children = (
+				1280E8661BE0AE3800F7B4BE /* Main */,
+				12B54E501BDB51B200D2D14F /* Request */,
+				12A3F5071BD8C79D00A4EB75 /* Common */,
+				129D5C101BD63CA9001CBD69 /* login */,
 				129D5BEB1BD6233D001CBD69 /* AppDelegate.h */,
 				129D5BEC1BD6233D001CBD69 /* AppDelegate.m */,
 				129D5BF11BD6233D001CBD69 /* ViewController.h */,
@@ -120,6 +296,51 @@
 				129D5C051BD6233D001CBD69 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		129D5C101BD63CA9001CBD69 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				129D5C111BD63CD4001CBD69 /* PhoneLoginViewController.h */,
+				129D5C121BD63CD4001CBD69 /* PhoneLoginViewController.m */,
+				129D5C141BD63D18001CBD69 /* PhoneRegisterViewController.h */,
+				129D5C151BD63D18001CBD69 /* PhoneRegisterViewController.m */,
+				129D5C1A1BD64FA0001CBD69 /* PhoneVerificationViewController.h */,
+				129D5C1B1BD64FA0001CBD69 /* PhoneVerificationViewController.m */,
+				129D5C1D1BD677B8001CBD69 /* PhoneUserInfoViewController.h */,
+				129D5C1E1BD677B8001CBD69 /* PhoneUserInfoViewController.m */,
+			);
+			name = login;
+			sourceTree = "<group>";
+		};
+		12A3F5071BD8C79D00A4EB75 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				12A3F50B1BD8C8E300A4EB75 /* UIColor+EVCarColor.h */,
+				12A3F50C1BD8C8E300A4EB75 /* UIColor+EVCarColor.m */,
+				12A3F50E1BD8CA3200A4EB75 /* Category.h */,
+				12A3F50F1BD8CB9600A4EB75 /* PrefixHeader.pch */,
+				12A3F5101BD8D8DA00A4EB75 /* WaitingAnimation.h */,
+				12A3F5111BD8D8DA00A4EB75 /* WaitingAnimation.m */,
+				12A3F5131BD8D8EF00A4EB75 /* WaitingAnimation.xib */,
+				12B54E541BDB653900D2D14F /* BaseViewController.h */,
+				12B54E551BDB653900D2D14F /* BaseViewController.m */,
+				1280E8601BDF68AF00F7B4BE /* UserTextField.h */,
+				1280E8611BDF68AF00F7B4BE /* UserTextField.m */,
+				1280E8631BDF715D00F7B4BE /* LoginTextField.h */,
+				1280E8641BDF715D00F7B4BE /* LoginTextField.m */,
+				1280E8BD1BE4BCD100F7B4BE /* ECarConstant.h */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		12B54E501BDB51B200D2D14F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				12B54E511BDB52D400D2D14F /* httpRequest.h */,
+				12B54E521BDB52D400D2D14F /* httpRequest.mm */,
+			);
+			name = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +423,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1280E8801BE0FD8E00F7B4BE /* RentTabViewCell.xib in Resources */,
+				1280E8AF1BE33C9A00F7B4BE /* RentViewCell.xib in Resources */,
+				1280E8AA1BE339C900F7B4BE /* RentView.xib in Resources */,
+				1280E8A21BE22A3100F7B4BE /* SearchView.xib in Resources */,
+				12A3F5141BD8D8EF00A4EB75 /* WaitingAnimation.xib in Resources */,
 				129D5BF61BD6233D001CBD69 /* Main.storyboard in Resources */,
+				1280E8981BE1F93D00F7B4BE /* mapapi.bundle in Resources */,
+				1280E8BC1BE3BB5500F7B4BE /* CarView.xib in Resources */,
 				129D5BFB1BD6233D001CBD69 /* LaunchScreen.xib in Resources */,
 				129D5BF81BD6233D001CBD69 /* Images.xcassets in Resources */,
 			);
@@ -222,10 +450,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1280E8A81BE339B800F7B4BE /* RentView.m in Sources */,
+				12B54E531BDB52D400D2D14F /* httpRequest.mm in Sources */,
+				1280E86F1BE0BDC500F7B4BE /* RentTabViewController.m in Sources */,
+				12B54E561BDB653900D2D14F /* BaseViewController.m in Sources */,
+				1280E89E1BE229AA00F7B4BE /* SearchView.m in Sources */,
+				12A3F5121BD8D8DA00A4EB75 /* WaitingAnimation.m in Sources */,
 				129D5BF01BD6233D001CBD69 /* EVCar.xcdatamodeld in Sources */,
+				129D5C1C1BD64FA0001CBD69 /* PhoneVerificationViewController.m in Sources */,
 				129D5BED1BD6233D001CBD69 /* AppDelegate.m in Sources */,
+				1280E8A51BE324BD00F7B4BE /* SearchViewController.m in Sources */,
+				1280E87F1BE0FD8E00F7B4BE /* RentTabViewCell.m in Sources */,
 				129D5BF31BD6233D001CBD69 /* ViewController.m in Sources */,
+				1280E8651BDF715D00F7B4BE /* LoginTextField.m in Sources */,
+				1280E8BA1BE3BB3E00F7B4BE /* CarView.m in Sources */,
+				1280E8621BDF68AF00F7B4BE /* UserTextField.m in Sources */,
+				1280E8751BE0BE7A00F7B4BE /* MessageTabViewController.m in Sources */,
+				129D5C1F1BD677B8001CBD69 /* PhoneUserInfoViewController.m in Sources */,
+				1280E8B21BE3B9B800F7B4BE /* RentViewController.m in Sources */,
+				1280E8721BE0BE5F00F7B4BE /* OrderTabViewController.m in Sources */,
+				1280E8781BE0BE8A00F7B4BE /* UserTabViewController.m in Sources */,
 				129D5BEA1BD6233D001CBD69 /* main.m in Sources */,
+				12A3F50D1BD8C8E300A4EB75 /* UIColor+EVCarColor.m in Sources */,
+				129D5C161BD63D18001CBD69 /* PhoneRegisterViewController.m in Sources */,
+				1280E8AE1BE33C9A00F7B4BE /* RentViewCell.m in Sources */,
+				1280E8691BE0AE5900F7B4BE /* MainTabbarViewController.m in Sources */,
+				129D5C131BD63CD4001CBD69 /* PhoneLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +542,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EVCar/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -303,7 +555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -335,13 +587,15 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EVCar/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -353,8 +607,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = EVCar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -363,8 +624,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = EVCar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -422,6 +689,7 @@
 				129D5C0C1BD6233D001CBD69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		129D5C0D1BD6233D001CBD69 /* Build configuration list for PBXNativeTarget "EVCarTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +698,7 @@
 				129D5C0F1BD6233D001CBD69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
