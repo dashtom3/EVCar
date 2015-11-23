@@ -19,4 +19,7 @@
 -(void)setMainNavBar;
 -(void)setRegisterUITextField:(UITextField *)uiTextField;
 -(void)setLoginUITextField:(UITextField *)uiTextField;
+-(void)setNavgationControllerLine;
+-(void)setNavgationControllerLineShow;
+-(void)showAlertView:(NSString *)text;
 @end

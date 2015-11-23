@@ -13,4 +13,5 @@
 +(UIColor *)borderColor1;
 +(UIColor *)borderColor2;
 +(UIColor *)MainColor;
++(UIColor *)BackgroundBlueColor;
 @end

@@ -45,7 +45,13 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self setMainNavBar];
-    self.title = @"我的订单";
+    
+    UILabel *labelTitle = [[UILabel alloc]initWithFrame:CGRectMake(self.view.bounds.size.width-50, 16, 100, 44)];
+    labelTitle.textAlignment = NSTextAlignmentCenter;
+    [labelTitle setFont:[UIFont boldSystemFontOfSize:19]];
+    labelTitle.text = @"我的订单";
+    self.navigationItem.titleView = labelTitle;
+    
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

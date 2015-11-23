@@ -36,19 +36,22 @@
     
     self.viewControllers = @[nv2,nv1,nv4];
     self.selectedIndex = 1;
-    [self setBarItemWithViewController:rtvc WithName:@"预约" WithImage:@"main_rent" WithImageSelected:@"main_rent2"];
-    [self setBarItemWithViewController:otvc WithName:@"订单" WithImage:@"main_order" WithImageSelected:@"main_order2"];
-    [self setBarItemWithViewController:mtvc WithName:@"消息" WithImage:@"main_message" WithImageSelected:@"main_message2"];
-    [self setBarItemWithViewController:utvc WithName:@"个人" WithImage:@"main_user" WithImageSelected:@"main_user2"];
+    [self setBarItemWithViewController:rtvc WithName:@"" WithImage:@"main_rent" WithImageSelected:@"main_rent2"];
+    [self setBarItemWithViewController:otvc WithName:@"" WithImage:@"main_order" WithImageSelected:@"main_order2"];
+    [self setBarItemWithViewController:mtvc WithName:@"" WithImage:@"main_message" WithImageSelected:@"main_message2"];
+    [self setBarItemWithViewController:utvc WithName:@"" WithImage:@"main_user" WithImageSelected:@"main_user2"];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor MainColor]} forState:UIControlStateSelected];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 -(void)setBarItemWithViewController:(UIViewController *)vc WithName:(NSString *)name WithImage:(NSString *)image WithImageSelected:(NSString *)imageSelected{
-    vc.tabBarItem = [[UITabBarItem alloc]initWithTitle:name image:[[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:imageSelected] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor MainColor]} forState:UIControlStateSelected];
+    UITabBarItem *item = [[UITabBarItem alloc]initWithTitle:name image:[[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:imageSelected] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+    vc.tabBarItem = item;
 }
 /*
 #pragma mark - Navigation

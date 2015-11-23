@@ -27,7 +27,7 @@
                         <action selector="rentCar:" destination="iN0-l3-epB" eventType="touchUpInside" id="8Mb-Cf-Ra8"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每分钟 1 元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWR-RY-EdA">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="每分钟 1 元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWR-RY-EdA">
                     <rect key="frame" x="12" y="552" width="120" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="TkM-8j-y2a"/>

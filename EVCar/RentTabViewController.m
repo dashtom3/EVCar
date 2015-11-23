@@ -8,13 +8,14 @@
 
 #import "RentTabViewController.h"
 #import "RentTabViewCell.h"
-#import <BaiduMapAPI_Map/BMKMapComponent.h>
+
 #import "RentViewController.h"
 #import "SearchViewController.h"
 @interface RentTabViewController (){
     NSArray *data;
     BMKMapManager* _mapManager;
     BMKMapView *mapView2;
+    BMKLocationService* locService;
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
@@ -41,7 +42,7 @@
     UILabel *labelTitle = [[UILabel alloc]initWithFrame:CGRectMake(self.view.bounds.size.width-50, 16, 100, 44)];
     labelTitle.textAlignment = NSTextAlignmentCenter;
     [labelTitle setFont:[UIFont boldSystemFontOfSize:19]];
-    labelTitle.attributedText = [self stringChange:@"ECAR" Color:[UIColor MainColor] Range:NSMakeRange(0, 1)];
+    labelTitle.attributedText = [self stringChange:@"惠易租" Color:[UIColor MainColor] Range:NSMakeRange(0, 1)];
     self.navigationItem.titleView = labelTitle;
     
     _mapManager = [[BMKMapManager alloc]init];
@@ -52,7 +53,10 @@
     }
     mapView2 = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 242)];
     [self.view addSubview:mapView2];
-    mapView2.delegate = self;
+    [mapView2 setZoomEnabled:YES];
+    [mapView2 setZoomLevel:13];
+    locService = [[BMKLocationService alloc]init];
+    
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView.tableHeaderView setHidden:YES];
@@ -64,6 +68,23 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [self setMainNavBar];
+    
+    [self startLocation];
+    [self setNavgationControllerLineShow];
+}
+- (void)viewWillAppear:(BOOL)animated{
+    mapView2.delegate = self;
+    locService.delegate = self;
+}
+-(void)startLocation{
+    [locService startUserLocationService];
+    mapView2.showsUserLocation = NO;//先关闭显示的定位图层
+    mapView2.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
+    mapView2.showsUserLocation = YES;//显示定位图层
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    mapView2.delegate = nil;
+    locService.delegate = nil;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return data.count;
@@ -86,11 +107,61 @@
     if(indexPath.row == 0){
         [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"rentView"] animated:YES];
     }else if(indexPath.row == 1){
-        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"rentView"] animated:YES];
+        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"pileView"] animated:YES];
     }else{
         [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"searchView"] animated:YES];
     }
 }
+
+/**
+ *在地图View将要启动定位时，会调用此函数
+ *@param mapView 地图View
+ */
+- (void)willStartLocatingUser
+{
+    NSLog(@"start locate");
+}
+
+/**
+ *用户方向更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
+{
+    [mapView2 updateLocationData:userLocation];
+    NSLog(@"heading is %@",userLocation.heading);
+}
+
+/**
+ *用户位置更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
+{
+    //    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    [mapView2 updateLocationData:userLocation];
+    [mapView2 setCenterCoordinate:userLocation.location.coordinate];
+}
+
+/**
+ *在地图View停止定位后，会调用此函数
+ *@param mapView 地图View
+ */
+- (void)didStopLocatingUser
+{
+    NSLog(@"stop locate");
+}
+
+/**
+ *定位失败后，会调用此函数
+ *@param mapView 地图View
+ *@param error 错误号，参考CLError.h中定义的错误号
+ */
+- (void)didFailToLocateUserWithError:(NSError *)error
+{
+    NSLog(@"location error");
+}
+
 /*
 #pragma mark - Navigation
 

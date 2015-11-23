@@ -7,6 +7,8 @@
 //
 
 #import "BaseViewController.h"
-@interface RentTabViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
+@interface RentTabViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,BMKMapViewDelegate,BMKLocationServiceDelegate>
 
 @end

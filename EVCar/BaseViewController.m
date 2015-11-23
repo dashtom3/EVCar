@@ -78,20 +78,58 @@
 }
 -(void)setRegisterUITextField:(UITextField *)uiTextField{
     uiTextField.layer.cornerRadius = 6.0f;
-    uiTextField.layer.borderWidth = 0.6;
+    uiTextField.layer.borderWidth = 1;
     [uiTextField.layer setBorderColor:[UIColor borderColor2].CGColor];
     uiTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 16, 0)];
     uiTextField.leftViewMode = UITextFieldViewModeAlways;
-    uiTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    //uiTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
 }
 -(void)setLoginUITextField:(UITextField *)uiTextField{
     uiTextField.layer.cornerRadius = 6.0f;
-    uiTextField.layer.borderWidth = 0.6;
+    uiTextField.layer.borderWidth = 1;
     [uiTextField.layer setBorderColor:[UIColor borderColor2].CGColor];
     uiTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 16, 0)];
     uiTextField.leftViewMode = UITextFieldViewModeAlways;
-    uiTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    //uiTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     uiTextField.alpha = 0.55;
+}
+-(void)setNavgationControllerLine{
+    if ([self.navigationController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
+        NSArray *list=self.navigationController.navigationBar.subviews;
+        for (id obj in list) {
+            if ([obj isKindOfClass:[UIImageView class]]) {
+                UIImageView *imageView=(UIImageView *)obj;
+                NSArray *list2=imageView.subviews;
+                for (id obj2 in list2) {
+                    if ([obj2 isKindOfClass:[UIImageView class]]) {
+                        UIImageView *imageView2=(UIImageView *)obj2;
+                        imageView2.hidden=YES;
+                    }
+                }
+            }
+        }
+    }
+}
+-(void)setNavgationControllerLineShow{
+    if ([self.navigationController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
+        NSArray *list=self.navigationController.navigationBar.subviews;
+        for (id obj in list) {
+            if ([obj isKindOfClass:[UIImageView class]]) {
+                UIImageView *imageView=(UIImageView *)obj;
+                NSArray *list2=imageView.subviews;
+                for (id obj2 in list2) {
+                    if ([obj2 isKindOfClass:[UIImageView class]]) {
+                        UIImageView *imageView2=(UIImageView *)obj2;
+                        imageView2.hidden=NO;
+                    }
+                }
+            }
+        }
+    }
+}
+-(void)showAlertView:(NSString *)text{
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:text delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
 }
 /*
 #pragma mark - Navigation

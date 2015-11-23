@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1255957A1C02285100C50568 /* PileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 125595791C02285100C50568 /* PileView.m */; };
+		1255957C1C02287800C50568 /* PileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1255957B1C02287800C50568 /* PileView.xib */; };
+		1255957F1C022D0800C50568 /* PileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1255957E1C022D0800C50568 /* PileViewController.m */; };
+		125595851C036EF100C50568 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125595841C036EF100C50568 /* BaiduMapAPI_Location.framework */; };
 		1280E8691BE0AE5900F7B4BE /* MainTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8681BE0AE5900F7B4BE /* MainTabbarViewController.m */; };
 		1280E86F1BE0BDC500F7B4BE /* RentTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E86E1BE0BDC500F7B4BE /* RentTabViewController.m */; };
 		1280E8751BE0BE7A00F7B4BE /* MessageTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1280E8741BE0BE7A00F7B4BE /* MessageTabViewController.m */; };
@@ -53,6 +57,7 @@
 		12A3F5141BD8D8EF00A4EB75 /* WaitingAnimation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12A3F5131BD8D8EF00A4EB75 /* WaitingAnimation.xib */; };
 		12B54E531BDB52D400D2D14F /* httpRequest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12B54E521BDB52D400D2D14F /* httpRequest.mm */; };
 		12B54E561BDB653900D2D14F /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B54E551BDB653900D2D14F /* BaseViewController.m */; };
+		3500480FA88A60C70F76F898 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C95385F020D0F36E1EEE3FEF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +71,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		125595781C02285100C50568 /* PileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PileView.h; sourceTree = "<group>"; };
+		125595791C02285100C50568 /* PileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PileView.m; sourceTree = "<group>"; };
+		1255957B1C02287800C50568 /* PileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PileView.xib; sourceTree = "<group>"; };
+		1255957D1C022D0800C50568 /* PileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PileViewController.h; sourceTree = "<group>"; };
+		1255957E1C022D0800C50568 /* PileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PileViewController.m; sourceTree = "<group>"; };
+		125595841C036EF100C50568 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
 		1280E8671BE0AE5900F7B4BE /* MainTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabbarViewController.h; sourceTree = "<group>"; };
 		1280E8681BE0AE5900F7B4BE /* MainTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabbarViewController.m; sourceTree = "<group>"; };
 		1280E86D1BE0BDC500F7B4BE /* RentTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentTabViewController.h; sourceTree = "<group>"; };
@@ -141,6 +152,9 @@
 		12B54E521BDB52D400D2D14F /* httpRequest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = httpRequest.mm; sourceTree = "<group>"; };
 		12B54E541BDB653900D2D14F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		12B54E551BDB653900D2D14F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		AD3CDD70D9AA17849E625B94 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C95385F020D0F36E1EEE3FEF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA661AAE2C5A010388DF17FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125595851C036EF100C50568 /* BaiduMapAPI_Location.framework in Frameworks */,
 				1280E89A1BE21D9300F7B4BE /* BaiduMapAPI_Map.framework in Frameworks */,
 				1280E8941BE1F7FC00F7B4BE /* libstdc++.6.0.9.dylib in Frameworks */,
 				1280E8921BE1F7ED00F7B4BE /* CoreTelephony.framework in Frameworks */,
@@ -159,6 +174,7 @@
 				1280E8861BE1F79E00F7B4BE /* QuartzCore.framework in Frameworks */,
 				1280E8841BE1F79300F7B4BE /* CoreLocation.framework in Frameworks */,
 				1280E8821BE1F59400F7B4BE /* BaiduMapAPI_Base.framework in Frameworks */,
+				3500480FA88A60C70F76F898 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +206,8 @@
 				1280E8A41BE324BD00F7B4BE /* SearchViewController.m */,
 				1280E8B01BE3B9B800F7B4BE /* RentViewController.h */,
 				1280E8B11BE3B9B800F7B4BE /* RentViewController.m */,
+				1255957D1C022D0800C50568 /* PileViewController.h */,
+				1255957E1C022D0800C50568 /* PileViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -212,6 +230,9 @@
 				1280E8B81BE3BB3E00F7B4BE /* CarView.h */,
 				1280E8B91BE3BB3E00F7B4BE /* CarView.m */,
 				1280E8BB1BE3BB5500F7B4BE /* CarView.xib */,
+				125595781C02285100C50568 /* PileView.h */,
+				125595791C02285100C50568 /* PileView.m */,
+				1255957B1C02287800C50568 /* PileView.xib */,
 			);
 			name = ViewAndCell;
 			sourceTree = "<group>";
@@ -234,6 +255,8 @@
 				129D5BE61BD6233D001CBD69 /* EVCar */,
 				129D5C031BD6233D001CBD69 /* EVCarTests */,
 				129D5BE51BD6233D001CBD69 /* Products */,
+				250D083E5A686EF332F7EC63 /* Pods */,
+				F8B59DE25915A77306F83489 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -333,6 +356,24 @@
 			name = Request;
 			sourceTree = "<group>";
 		};
+		250D083E5A686EF332F7EC63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD3CDD70D9AA17849E625B94 /* Pods.debug.xcconfig */,
+				EA661AAE2C5A010388DF17FF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F8B59DE25915A77306F83489 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				125595841C036EF100C50568 /* BaiduMapAPI_Location.framework */,
+				C95385F020D0F36E1EEE3FEF /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,9 +381,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 129D5C0A1BD6233D001CBD69 /* Build configuration list for PBXNativeTarget "EVCar" */;
 			buildPhases = (
+				FE5D5DC62A6A87BD53BC10BD /* Check Pods Manifest.lock */,
 				129D5BE01BD6233D001CBD69 /* Sources */,
 				129D5BE11BD6233D001CBD69 /* Frameworks */,
 				129D5BE21BD6233D001CBD69 /* Resources */,
+				58A8EBA2359F1BE576E9ECF6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,6 +425,7 @@
 				TargetAttributes = {
 					129D5BE31BD6233D001CBD69 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 6992736KPW;
 					};
 					129D5BFF1BD6233D001CBD69 = {
 						CreatedOnToolsVersion = 6.4;
@@ -421,6 +465,7 @@
 				129D5BF61BD6233D001CBD69 /* Main.storyboard in Resources */,
 				1280E8981BE1F93D00F7B4BE /* mapapi.bundle in Resources */,
 				1280E8BC1BE3BB5500F7B4BE /* CarView.xib in Resources */,
+				1255957C1C02287800C50568 /* PileView.xib in Resources */,
 				129D5BFB1BD6233D001CBD69 /* LaunchScreen.xib in Resources */,
 				129D5BF81BD6233D001CBD69 /* Images.xcassets in Resources */,
 			);
@@ -435,6 +480,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		58A8EBA2359F1BE576E9ECF6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE5D5DC62A6A87BD53BC10BD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		129D5BE01BD6233D001CBD69 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -446,6 +524,7 @@
 				12B54E561BDB653900D2D14F /* BaseViewController.m in Sources */,
 				1280E89E1BE229AA00F7B4BE /* SearchView.m in Sources */,
 				12A3F5121BD8D8DA00A4EB75 /* WaitingAnimation.m in Sources */,
+				1255957A1C02285100C50568 /* PileView.m in Sources */,
 				129D5BF01BD6233D001CBD69 /* EVCar.xcdatamodeld in Sources */,
 				129D5C1C1BD64FA0001CBD69 /* PhoneVerificationViewController.m in Sources */,
 				129D5BED1BD6233D001CBD69 /* AppDelegate.m in Sources */,
@@ -455,6 +534,7 @@
 				1280E8BA1BE3BB3E00F7B4BE /* CarView.m in Sources */,
 				1280E8751BE0BE7A00F7B4BE /* MessageTabViewController.m in Sources */,
 				129D5C1F1BD677B8001CBD69 /* PhoneUserInfoViewController.m in Sources */,
+				1255957F1C022D0800C50568 /* PileViewController.m in Sources */,
 				1280E8B21BE3B9B800F7B4BE /* RentViewController.m in Sources */,
 				1280E8781BE0BE8A00F7B4BE /* UserTabViewController.m in Sources */,
 				129D5BEA1BD6233D001CBD69 /* main.m in Sources */,
@@ -585,6 +665,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -593,8 +674,10 @@
 		};
 		129D5C0B1BD6233D001CBD69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD3CDD70D9AA17849E625B94 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -602,16 +685,29 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = EVCar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-AFNetworking\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		129D5C0C1BD6233D001CBD69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA661AAE2C5A010388DF17FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -619,6 +715,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = EVCar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
