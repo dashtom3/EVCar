@@ -71,7 +71,7 @@
         }
     } failure:^(NSError *error) {
         [self.waitingAnimation stopAnimation];
-        [self showAlertView:@"网络连接失败,测试阶段暂时让你到下一个页面~.~"];
+        [self showAlertView:@"网络连接失败"];
     }];
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField{

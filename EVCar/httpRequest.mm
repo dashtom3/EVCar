@@ -55,7 +55,7 @@ parameters:(id)parameters
          parameters:(id)parameters
             success:(void (^)(id responseObject))success
             failure:(void(^)(NSError *error))failure{
-    [self GET:@"http://61.190.61.78/EVCharger/api/User/RegisterUser" parameters:parameters success:^(id responseObject){
+    [self POST:@"http://61.190.61.78/EVCharger/api/User/RegisterUser" parameters:parameters success:^(id responseObject){
         NSLog(@"JSON: %@", responseObject);
         success(responseObject);
     }failure:^(NSError *error){
@@ -109,6 +109,45 @@ parameters:(id)parameters
               success:(void (^)(id responseObject))success
               failure:(void(^)(NSError *error))failure{
     [self GET:@"http://61.190.61.78/EVCharger/api/User/Logout" parameters:parameters success:^(id responseObject){
+        NSLog(@"JSON: %@", responseObject);
+        success(responseObject);
+    }failure:^(NSError *error){
+        NSLog(@"Error: %@", error);
+        failure(error);
+    }];
+}
+//获取所有车点信息
+-(void)getAllCarPark:(NSString *)URLString
+          parameters:(id)parameters
+             success:(void (^)(id responseObject))success
+             failure:(void(^)(NSError *error))failure{
+    [self GET:@"http://61.190.61.78/EVCharger/api/Car/GetAllRegion" parameters:parameters success:^(id responseObject){
+        NSLog(@"JSON: %@", responseObject);
+        success(responseObject);
+    }failure:^(NSError *error){
+        NSLog(@"Error: %@", error);
+        failure(error);
+    }];
+}
+//获取所有充电桩点信息
+-(void)getAllChargerPark:(NSString *)URLString
+          parameters:(id)parameters
+             success:(void (^)(id responseObject))success
+             failure:(void(^)(NSError *error))failure{
+    [self GET:@"http://61.190.61.78/EVCharger/api/Charger/GetAllRegion" parameters:parameters success:^(id responseObject){
+        NSLog(@"JSON: %@", responseObject);
+        success(responseObject);
+    }failure:^(NSError *error){
+        NSLog(@"Error: %@", error);
+        failure(error);
+    }];
+}
+//获取所有充电桩信息
+-(void)getAllChargerParkInfo:(NSString *)URLString
+              parameters:(id)parameters
+                 success:(void (^)(id responseObject))success
+                 failure:(void(^)(NSError *error))failure{
+    [self GET:@"http://61.190.61.78/EVCharger/api/Charger/GetAllTerminalInfo" parameters:parameters success:^(id responseObject){
         NSLog(@"JSON: %@", responseObject);
         success(responseObject);
     }failure:^(NSError *error){

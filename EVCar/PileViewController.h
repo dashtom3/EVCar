@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import "PileView.h"
 @interface PileViewController : BaseViewController<pileAlertViewDelegate>
-@property (nonatomic) NSArray *data;
+@property (nonatomic) NSMutableDictionary *data;
 
 
 @end

@@ -8,6 +8,7 @@
 
 #import "PhoneRegisterViewController.h"
 #import "PhoneVerificationViewController.h"
+#import "WebViewController.h"
 #import "httpRequest.h"
 @interface PhoneRegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
@@ -53,6 +54,22 @@
 }
 
 - (IBAction)goToVerificationController:(id)sender {
+//    httpRequest *hr = [[httpRequest alloc]init];
+//    [hr userRegister:nil parameters:@{@"phonenum":@"15921161091",@"password":@"123456",@"verifycode":@"6305",@"username":@"郑璞睿",@"idno":@"371202199105040834"} success:^(id responseObject) {
+//        [self.waitingAnimation stopAnimation];
+//        if([[responseObject valueForKey:@"code"] isEqualToString:@"00"]){
+//            [self showAlertView:@"注册成功"];
+//            [self dismissViewControllerAnimated:YES completion:nil];
+//        }else{
+//            [self showAlertView:@"注册失败"];
+//            [self dismissViewControllerAnimated:YES completion:nil];
+//        }
+//    } failure:^(NSError *error) {
+//        [self.waitingAnimation stopAnimation];
+//        [self showAlertView:@"网络连接失败"];
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//    }];
+
     //发送手机验证
     if(_phoneNumber.text.length != 11){
         [self showAlertView:@"请输入11位手机号"];
@@ -81,14 +98,17 @@
             }
         } failure:^(NSError *error) {
             [self.waitingAnimation stopAnimation];
-            [self showAlertView:@"网络连接失败,测试阶段暂时让你到下一个页面~.~"];
+            [self showAlertView:@"网络连接失败"];
             PhoneVerificationViewController *pvvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"phoneVerification"];
             [self.navigationController pushViewController:pvvc animated:YES];
         }];
     }
 }
-
+//服务条款
 - (IBAction)goToServiceContent:(id)sender {
+    WebViewController *wvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"webView"];
+    wvc.webTitle = @"服务条款";
+    [self.navigationController pushViewController:wvc animated:YES];
     
 }
 

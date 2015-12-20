@@ -22,7 +22,7 @@
     
         // Do any additional setup after loading the view.
 }
--(void)viewWillAppear:(BOOL)animated{
+-(void)viewDidAppear:(BOOL)animated{
     [self setMainNavBar];
     UILabel *labelTitle = [[UILabel alloc]initWithFrame:CGRectMake(self.view.bounds.size.width-50, 16, 100, 44)];
     labelTitle.textAlignment = NSTextAlignmentCenter;
@@ -31,6 +31,8 @@
     self.navigationItem.titleView = labelTitle;
     
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
+}
+- (void)viewWillAppear:(BOOL)animated{
     data = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@{@"image":@"user_recharge",@"title":@"E币充值"},@{@"image":@"user_deposit",@"title":@"押金"}, nil], [NSArray arrayWithObjects:@{@"image":@"user_help",@"title":@"帮助中心",@"detail":@""},@{@"image":@"user_activity",@"title":@"活动",@"detail":@""} ,nil],[NSArray arrayWithObjects:@{@"image":@"user_setting",@"title":@"系统设置",@"detail":@""},nil],nil];
 }
 - (void)didReceiveMemoryWarning {
@@ -89,7 +91,7 @@
             view.contentMode = UIViewContentModeScaleAspectFit;
             [cell addSubview:view];
             UILabel *lbl = [[UILabel alloc]initWithFrame:CGRectMake(78, 0, 250, 84)];
-            lbl.text = @"兰超然";
+            lbl.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"username"];
             [cell addSubview:lbl];
         }else{
 //            RentViewCell *cell1 = [_tableView dequeueReusableCellWithIdentifier:@"RentViewCell"];
@@ -107,7 +109,11 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    if(indexPath.section == 0){
+        
+    }else if(indexPath.row == 0 && indexPath.section == 2){
+        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"userHelp"] animated:YES];
+    }
 }
 
 

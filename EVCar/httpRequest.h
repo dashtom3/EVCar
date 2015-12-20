@@ -40,4 +40,18 @@
        parameters:(id)parameters
           success:(void (^)(id responseObject))success
           failure:(void(^)(NSError *error))failure;
+-(void)getAllCarPark:(NSString *)URLString
+          parameters:(id)parameters
+             success:(void (^)(id responseObject))success
+             failure:(void(^)(NSError *error))failure;
+//获取所有充电桩点信息
+-(void)getAllChargerPark:(NSString *)URLString
+              parameters:(id)parameters
+                 success:(void (^)(id responseObject))success
+                 failure:(void(^)(NSError *error))failure;
+//获取所有充电桩信息
+-(void)getAllChargerParkInfo:(NSString *)URLString
+                  parameters:(id)parameters
+                     success:(void (^)(id responseObject))success
+                     failure:(void(^)(NSError *error))failure;
 @end

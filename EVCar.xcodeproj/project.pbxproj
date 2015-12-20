@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1226087E1C20405D007D07BD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1226087D1C20405D007D07BD /* WebViewController.m */; };
+		122608811C2653C3007D07BD /* PhoneForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122608801C2653C3007D07BD /* PhoneForgetViewController.m */; };
+		122608841C2662FC007D07BD /* UserHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122608831C2662FC007D07BD /* UserHelpViewController.m */; };
 		1255957A1C02285100C50568 /* PileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 125595791C02285100C50568 /* PileView.m */; };
 		1255957C1C02287800C50568 /* PileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1255957B1C02287800C50568 /* PileView.xib */; };
 		1255957F1C022D0800C50568 /* PileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1255957E1C022D0800C50568 /* PileViewController.m */; };
@@ -71,6 +74,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1226087C1C20405D007D07BD /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		1226087D1C20405D007D07BD /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		1226087F1C2653C3007D07BD /* PhoneForgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneForgetViewController.h; sourceTree = "<group>"; };
+		122608801C2653C3007D07BD /* PhoneForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneForgetViewController.m; sourceTree = "<group>"; };
+		122608821C2662FC007D07BD /* UserHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHelpViewController.h; sourceTree = "<group>"; };
+		122608831C2662FC007D07BD /* UserHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHelpViewController.m; sourceTree = "<group>"; };
 		125595781C02285100C50568 /* PileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PileView.h; sourceTree = "<group>"; };
 		125595791C02285100C50568 /* PileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PileView.m; sourceTree = "<group>"; };
 		1255957B1C02287800C50568 /* PileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PileView.xib; sourceTree = "<group>"; };
@@ -208,6 +217,8 @@
 				1280E8B11BE3B9B800F7B4BE /* RentViewController.m */,
 				1255957D1C022D0800C50568 /* PileViewController.h */,
 				1255957E1C022D0800C50568 /* PileViewController.m */,
+				122608821C2662FC007D07BD /* UserHelpViewController.h */,
+				122608831C2662FC007D07BD /* UserHelpViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -326,6 +337,8 @@
 				129D5C1B1BD64FA0001CBD69 /* PhoneVerificationViewController.m */,
 				129D5C1D1BD677B8001CBD69 /* PhoneUserInfoViewController.h */,
 				129D5C1E1BD677B8001CBD69 /* PhoneUserInfoViewController.m */,
+				1226087F1C2653C3007D07BD /* PhoneForgetViewController.h */,
+				122608801C2653C3007D07BD /* PhoneForgetViewController.m */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -343,6 +356,8 @@
 				12B54E541BDB653900D2D14F /* BaseViewController.h */,
 				12B54E551BDB653900D2D14F /* BaseViewController.m */,
 				1280E8BD1BE4BCD100F7B4BE /* ECarConstant.h */,
+				1226087C1C20405D007D07BD /* WebViewController.h */,
+				1226087D1C20405D007D07BD /* WebViewController.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -521,6 +536,7 @@
 				1280E8A81BE339B800F7B4BE /* RentView.m in Sources */,
 				12B54E531BDB52D400D2D14F /* httpRequest.mm in Sources */,
 				1280E86F1BE0BDC500F7B4BE /* RentTabViewController.m in Sources */,
+				122608841C2662FC007D07BD /* UserHelpViewController.m in Sources */,
 				12B54E561BDB653900D2D14F /* BaseViewController.m in Sources */,
 				1280E89E1BE229AA00F7B4BE /* SearchView.m in Sources */,
 				12A3F5121BD8D8DA00A4EB75 /* WaitingAnimation.m in Sources */,
@@ -536,10 +552,12 @@
 				129D5C1F1BD677B8001CBD69 /* PhoneUserInfoViewController.m in Sources */,
 				1255957F1C022D0800C50568 /* PileViewController.m in Sources */,
 				1280E8B21BE3B9B800F7B4BE /* RentViewController.m in Sources */,
+				122608811C2653C3007D07BD /* PhoneForgetViewController.m in Sources */,
 				1280E8781BE0BE8A00F7B4BE /* UserTabViewController.m in Sources */,
 				129D5BEA1BD6233D001CBD69 /* main.m in Sources */,
 				12A3F50D1BD8C8E300A4EB75 /* UIColor+EVCarColor.m in Sources */,
 				129D5C161BD63D18001CBD69 /* PhoneRegisterViewController.m in Sources */,
+				1226087E1C20405D007D07BD /* WebViewController.m in Sources */,
 				1280E8AE1BE33C9A00F7B4BE /* RentViewCell.m in Sources */,
 				1280E8691BE0AE5900F7B4BE /* MainTabbarViewController.m in Sources */,
 				129D5C131BD63CD4001CBD69 /* PhoneLoginViewController.m in Sources */,

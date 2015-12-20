@@ -26,10 +26,12 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [self setRentNavBar];
+    self.title = [_data valueForKey:@"TerminalName"];
     PileView *pileView = [[[NSBundle mainBundle] loadNibNamed:@"PileView" owner:nil options:nil] firstObject];
     pileView.frame = CGRectMake(0, 60, SCREEN_WIDTH, SCREEN_HEIGHT-60);
     pileView.delegate = self;
     [self.view addSubview:pileView];
+    [pileView setData:_data];
 }
 
 -(void)setRentNavBar{

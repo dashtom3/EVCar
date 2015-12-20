@@ -32,7 +32,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="易租" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWp-aC-mXF">
-                    <rect key="frame" x="238" y="190" width="80" height="24"/>
+                    <rect key="frame" x="234" y="190" width="80" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="jz2-im-U7n"/>
                         <constraint firstAttribute="width" constant="80" id="kxT-9Y-h03"/>
@@ -42,7 +42,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="惠" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf9-tF-SPI">
-                    <rect key="frame" x="179" y="191" width="60" height="22"/>
+                    <rect key="frame" x="174" y="191" width="60" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="Uve-De-BGE"/>
                         <constraint firstAttribute="width" constant="60" id="hIh-oX-f0c"/>
@@ -55,11 +55,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="nf9-tF-SPI" secondAttribute="centerY" constant="38" id="ElH-MD-Voy"/>
-                <constraint firstAttribute="centerX" secondItem="KWp-aC-mXF" secondAttribute="centerX" constant="-38" id="ZSs-ll-IBu"/>
+                <constraint firstAttribute="centerX" secondItem="KWp-aC-mXF" secondAttribute="centerX" constant="-34" id="ZSs-ll-IBu"/>
                 <constraint firstAttribute="centerY" secondItem="kId-c2-rCX" secondAttribute="centerY" constant="78" id="b68-34-V8e"/>
                 <constraint firstAttribute="centerY" secondItem="bla-x1-SLm" secondAttribute="centerY" constant="78" id="eMU-5R-4gV"/>
                 <constraint firstAttribute="centerX" secondItem="bla-x1-SLm" secondAttribute="centerX" constant="110" id="fFY-y9-yxA"/>
-                <constraint firstAttribute="centerX" secondItem="nf9-tF-SPI" secondAttribute="centerX" constant="31" id="hzS-A6-XOZ"/>
+                <constraint firstAttribute="centerX" secondItem="nf9-tF-SPI" secondAttribute="centerX" constant="36" id="hzS-A6-XOZ"/>
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" constant="-90" id="mMp-wL-qg6"/>
                 <constraint firstAttribute="centerY" secondItem="KWp-aC-mXF" secondAttribute="centerY" constant="38" id="nEC-5d-BEb"/>
             </constraints>

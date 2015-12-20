@@ -14,8 +14,9 @@
 
 @interface PileView : UIView<UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) NSArray *data;
+@property (nonatomic) NSMutableArray *data;
 @property (strong, nonatomic) IBOutlet UIButton *btnPile;
 
 @property (nonatomic) id delegate;
+-(void)setData:(NSMutableDictionary *)value;
 @end

@@ -13,13 +13,22 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:@"RentViewCell" bundle:nil] forCellReuseIdentifier:@"RentViewCell"];
-    _data = [NSArray arrayWithObjects:@{@"image":@"pile_wait",@"title":@"前方等待",@"detail":@"9 辆"}, nil];
+    _data = [NSMutableArray arrayWithObjects:@{@"image":@"pile_wait",@"title":@"前方等待",@"detail":@"9 辆"}, nil];
 }
 - (IBAction)rentCar:(id)sender {
     [_delegate showAlertView:_data];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _data.count;
+}
+-(void)setData:(NSMutableDictionary *)value{
+    if([[value valueForKey:@"Terminal State"]intValue] == 1){
+        [_data addObject:@{@"image":@"car_name",@"title":@"租赁状态",@"detail":@"可租"}];
+    }else{
+        [_data addObject:@{@"image":@"car_name",@"title":@"租赁状态",@"detail":@"离线"}];
+    }
+    [_data addObject:@{@"image":@"car_times",@"title":@"租赁地点",@"detail":[value valueForKey:@"DeptName"]}];
+    [_tableView reloadData];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -75,26 +75,24 @@
         [hr userLogin:nil parameters:@{@"phonenum":_phoneNumber.text,@"password":_password.text} success:^(id responseObject) {
             [self.waitingAnimation stopAnimation];
             if([[responseObject valueForKey:@"code"] isEqualToString:@"00"]){
-                [self showAlertView:@"用户登录成功!"];
+                //[self showAlertView:@"用户登录成功!"];
                 NSMutableDictionary *content = [responseObject mutableCopy];
                 [content setObject:_password.text forKey:@"password"];
                 [[NSUserDefaults standardUserDefaults]setObject:content forKey:@"user"];
                 [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"tabBarController"] animated:YES];
             }else{
-                [self showAlertView:@"用户登录失败,测试阶段放你通过！~。~"];
-                [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"tabBarController"] animated:YES];
+                [self showAlertView:@"用户登录失败"];
             }
         } failure:^(NSError *error) {
             [self.waitingAnimation stopAnimation];
-            [self showAlertView:@"用户登录失败,测试阶段放你通过！~。~"];
-            [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"tabBarController"] animated:YES];
+            [self showAlertView:@"网络连接失败"];
         }];
     }
 
     
 }
 - (IBAction)forgetPassword:(id)sender {
-    
+    [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"phoneForget"] animated:YES];
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     textField.alpha = 1;
