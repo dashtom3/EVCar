@@ -8,6 +8,7 @@
 
 #import "UserTabViewController.h"
 #import "RentViewCell.h"
+#import "UserHelpViewController.h"
 @interface UserTabViewController (){
     NSArray *data;
 }
@@ -112,7 +113,10 @@
     if(indexPath.section == 0){
         
     }else if(indexPath.row == 0 && indexPath.section == 2){
-        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"userHelp"] animated:YES];
+        UserHelpViewController *uhvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"userHelp"];
+        uhvc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:uhvc animated:YES];
+        
     }
 }
 

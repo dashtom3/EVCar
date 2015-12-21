@@ -92,6 +92,9 @@
     }
     return true;
 }
+- (IBAction)backToLoginView:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 /*
 #pragma mark - Navigation
 

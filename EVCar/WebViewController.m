@@ -31,6 +31,14 @@
             [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[data[i] valueForKey:@"url"]]]];
         }
     }
+    [self setNavBar];
+}
+-(void)setNavBar{
+    [self.navigationController setNavigationBarHidden:true];
+    //[self hideTabBar];
+}
+-(void)setInit{
+    [super setInit];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

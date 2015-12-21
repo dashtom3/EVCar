@@ -46,7 +46,7 @@
 }
 
 -(void)waitingLabelAnimation{
-    _waitingLabel.text = [NSString stringWithFormat:@"%@%@",waitingLabelKind[waitingLabelKindNum],waitingLabelString[waitingLabelKindNum]];
+    _waitingLabel.text = [NSString stringWithFormat:@"%@%@",waitingLabelKind[waitingLabelKindNum],waitingLabelString[waitingLabelNum]];
     if(waitingLabelNum>=3){
         waitingLabelNum = 0;
     }else{
@@ -54,13 +54,13 @@
     }
 }
 -(void)startAnimation{
-    self.alpha = 0.6;
+    self.alpha = 1;
     [timer setFireDate:[[NSDate alloc]init]];
     [_waitingActivity startAnimating];
 }
 -(void)stopAnimation{
     self.alpha = 0;
-    [timer setFireDate:[[NSDate alloc]init]];
     [_waitingActivity stopAnimating];
+    [timer invalidate];
 }
 @end

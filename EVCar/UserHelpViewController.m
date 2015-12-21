@@ -45,7 +45,7 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setBarTintColor:[UIColor MainColor]];
     [self setNavgationControllerLine];
-    [self hideTabBar];
+    //[self hideTabBar];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -78,7 +78,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     WebViewController *wvc =[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"webView" ];
     wvc.webTitle = data[indexPath.row];
+    //wvc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:wvc animated:YES];
+    //wvc.hidesBottomBarWhenPushed = NO;
 }
 /*
 #pragma mark - Navigation

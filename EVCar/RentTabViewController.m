@@ -56,7 +56,7 @@
     if (!ret) {
         NSLog(@"manager start failed!");
     }
-    mapView2 = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 242)];
+    mapView2 = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height-300)];
     [self.view addSubview:mapView2];
     [mapView2 setZoomEnabled:YES];
     [mapView2 setZoomLevel:13];
@@ -72,7 +72,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self setMainNavBar];
+    
     
     [self startLocation];
     [self setNavgationControllerLineShow];
@@ -80,6 +80,7 @@
     [self getChargerInfo];
 }
 - (void)viewWillAppear:(BOOL)animated{
+    [self setMainNavBar];
     mapLocationFirstUpdate = true;
     mapView2.delegate = self;
     locService.delegate = self;
@@ -107,6 +108,9 @@
     }];
 }
 -(void)getChargerInfo{
+    self.waitingAnimation = [[WaitingAnimation alloc]initWithNum:0 WithMainFrame:self.view.frame];
+    [self.view addSubview:self.waitingAnimation];
+    [self.waitingAnimation startAnimation];
     httpRequest *hr = [[httpRequest alloc]init];
     [hr getAllChargerParkInfo:nil parameters:nil success:^(id responseObject) {
         [self.waitingAnimation stopAnimation];
@@ -176,8 +180,9 @@
     }else if(indexPath.row == 1){
         PileViewController *pvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"pileView"];
         pvc.data = mapNear;
+        pvc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController: pvc animated:YES];
-        
+        pvc.hidesBottomBarWhenPushed = NO;
     }else{
         [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"searchView"] animated:YES];
     }

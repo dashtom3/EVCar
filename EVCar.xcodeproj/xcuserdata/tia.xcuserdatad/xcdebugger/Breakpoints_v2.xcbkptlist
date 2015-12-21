@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EVCar/WaitingAnimation.m"
-            timestampString = "467621561.295639"
+            timestampString = "472408728.158353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -728,11 +728,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EVCar/UserTabViewController.m"
-            timestampString = "472281265.650945"
+            timestampString = "472406829.156462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "-backToLoginView"
             landmarkType = "5">
          </BreakpointContent>

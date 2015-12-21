@@ -71,7 +71,7 @@
     
 }
 -(void)setMainNavBar{
-    [self showTabBar];
+    //[self showTabBar];
     [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     [self.navigationController setNavigationBarHidden:false];
