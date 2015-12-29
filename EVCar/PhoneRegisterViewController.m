@@ -55,17 +55,19 @@
 
 - (IBAction)goToVerificationController:(id)sender {
 //    httpRequest *hr = [[httpRequest alloc]init];
-//    [hr userRegister:nil parameters:@{@"phonenum":@"15921161091",@"password":@"123456",@"verifycode":@"6305",@"username":@"郑璞睿",@"idno":@"371202199105040834"} success:^(id responseObject) {
-//        [self.waitingAnimation stopAnimation];
+//    [hr userRegister:nil WithFile:@"base_back" WithParameters:@{@"phonenum":@"15921161091",@"Password":@"123456",@"verifycode":@"5115",@"MemberName":@"郑璞睿",@"IdCard":@"371202199105040834",@"Nation":@"汉族",@"Address":@"上海市",@"marital":@"未婚",@"Sex":@"女",@"Birthday":@"1991-05-04"} success:^(id responseObject) {
+//        //[self.waitingAnimation stopAnimation];
 //        if([[responseObject valueForKey:@"code"] isEqualToString:@"00"]){
 //            [self showAlertView:@"注册成功"];
-//            [self dismissViewControllerAnimated:YES completion:nil];
+//            //[self dismissViewControllerAnimated:YES completion:nil];
+//            PhoneVerificationViewController *pvvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"phoneVerification"];
+//                            [self.navigationController pushViewController:pvvc animated:YES];
 //        }else{
 //            [self showAlertView:@"注册失败"];
 //            [self dismissViewControllerAnimated:YES completion:nil];
 //        }
 //    } failure:^(NSError *error) {
-//        [self.waitingAnimation stopAnimation];
+//        //[self.waitingAnimation stopAnimation];
 //        [self showAlertView:@"网络连接失败"];
 //        [self dismissViewControllerAnimated:YES completion:nil];
 //    }];

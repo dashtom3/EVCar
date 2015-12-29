@@ -46,7 +46,7 @@
     _collectionView.backgroundColor = [UIColor whiteColor];
     [_collectionView registerNib:[UINib nibWithNibName:@"SearchView" bundle:nil] forCellWithReuseIdentifier:@"SearchCell"];
     [_tableView registerNib:[UINib nibWithNibName:@"RentTabViewCell" bundle:nil] forCellReuseIdentifier:@"RentCell"];
-    data = [NSArray arrayWithObjects:@{@"image":@"main_map_rent",@"title":@"同济大学四平路校区",@"detail":@"上海市四平路1239号"}, @{@"image":@"main_map_rent",@"title":@"希尔顿酒店",@"detail":@"上海市松花江路271号"}, @{@"image":@"main_map_rent",@"title":@"浦东利卡儿酒店",@"detail":@"上海市世纪大道8号"},nil];
+    data = [NSArray arrayWithObjects:@{@"image":@"main_map_rent",@"title":@"包河茶博城充电终端",@"detail":@"合肥市包河大道100号"}, @{@"image":@"main_map_rent",@"title":@"惠易充运营终端",@"detail":@"泸州大道"}, @{@"image":@"main_map_rent",@"title":@"滨湖世纪充电桩",@"detail":@"合肥市经四路太原路"},nil];
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -79,7 +79,7 @@
     SearchView* cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
     if(indexPath.row == 0){
-        [cell setDataWithImage:@"search_place" WithType:@"位置" WithContent:@"杨浦区"];
+        [cell setDataWithImage:@"search_place" WithType:@"位置" WithContent:@"合肥市"];
     }else{
         [cell setDataWithImage:@"search_type" WithType:@"类型" WithContent:@"全部"];
     }

@@ -9,14 +9,16 @@
 #import "PhoneUserInfoViewController.h"
 #import "httpRequest.h"
 
-@interface PhoneUserInfoViewController ()
+@interface PhoneUserInfoViewController (){
+    UIImage *image;
+}
 @property (weak, nonatomic) IBOutlet UITextField *textRealName;
 @property (weak, nonatomic) IBOutlet UITextField *textEmail;
 @property (weak, nonatomic) IBOutlet UITextField *textDriverLisence;
 @property (weak, nonatomic) IBOutlet UIButton *btnLoadDirverPic;
 @property (strong, nonatomic) IBOutlet UILabel *labelDetail;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *topConstant;
-
+@property (strong, nonatomic) UIActionSheet *actionSheet;
 
 @end
 
@@ -52,7 +54,7 @@
     }else if(_textEmail.text.length == 0){
         [self showAlertView:@"请填写身份证号"];
         [_textEmail becomeFirstResponder];
-    }else{
+    }else if(image){
         [_textEmail resignFirstResponder];
         [_textRealName resignFirstResponder];
         [_textDriverLisence resignFirstResponder];
@@ -60,20 +62,22 @@
         [self.view addSubview:self.waitingAnimation];
         [self.waitingAnimation startAnimation];
         httpRequest *hr = [[httpRequest alloc]init];
-        [hr userRegister:nil parameters:@{@"phonenum":[[NSUserDefaults.standardUserDefaults valueForKey:@"register"] valueForKey:@"username"],@"Password":[[NSUserDefaults.standardUserDefaults valueForKey:@"register"] valueForKey:@"password"],@"verifycode":[[NSUserDefaults.standardUserDefaults valueForKey:@"register"] valueForKey:@"verification"],@"username":[[NSUserDefaults.standardUserDefaults valueForKey:@"register"] valueForKey:@"username"],@"idno":_textEmail.text} success:^(id responseObject) {
-        [self.waitingAnimation stopAnimation];
-        if([[responseObject valueForKey:@"code"] isEqualToString:@"00"]){
-            [self showAlertView:@"注册成功"];
+        [hr userRegister:nil WithFile:image WithParameters:@{@"phonenum":[[NSUserDefaults.standardUserDefaults valueForKey:@"register"] valueForKey:@"username"] ,@"Password":[[NSUserDefaults.standardUserDefaults valueForKey:@"register"] valueForKey:@"password"],@"verifycode":[[NSUserDefaults.standardUserDefaults valueForKey:@"register"] valueForKey:@"verification"],@"MemberName":_textRealName.text,@"IdCard":_textEmail.text,@"Nation":@"汉族",@"Address":@"上海市",@"marital":@"未婚",@"Sex":@"女",@"Birthday":@"1991-05-04"} success:^(id responseObject) {
+            [self.waitingAnimation stopAnimation];
+            if([[responseObject valueForKey:@"code"] isEqualToString:@"00"]){
+                [self showAlertView:@"注册成功"];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }else{
+                [self showAlertView:@"注册失败"];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        } failure:^(NSError *error) {
+            //[self.waitingAnimation stopAnimation];
+            [self showAlertView:@"网络连接失败"];
             [self dismissViewControllerAnimated:YES completion:nil];
-        }else{
-            [self showAlertView:@"注册失败"];
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
-    } failure:^(NSError *error) {
-        [self.waitingAnimation stopAnimation];
-        [self showAlertView:@"网络连接失败"];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
+        }];
+    }else{
+        [self showAlertView:@"请上传照片"];
     }
 }
 - (IBAction)backToPhoneVerification:(id)sender {
@@ -102,6 +106,65 @@
         [textField resignFirstResponder];
     }
     return true;
+}
+- (IBAction)uploadUserPic:(id)sender {
+    [self callActionSheetFunc];
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+    
+    image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+}
+
+- (void)callActionSheetFunc{
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"选择图像" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从相册选择", nil];
+    }else{
+        self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"选择图像" delegate:self cancelButtonTitle:@"取消"destructiveButtonTitle:nil otherButtonTitles:@"从相册选择", nil];
+    }
+    
+    self.actionSheet.tag = 1000;
+    [self.actionSheet showInView:self.view];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (actionSheet.tag == 1000) {
+        NSUInteger sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        // 判断是否支持相机
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            switch (buttonIndex) {
+                case 0:
+                    //来源:相机
+                    sourceType = UIImagePickerControllerSourceTypeCamera;
+                    break;
+                case 1:
+                    //来源:相册
+                    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                    break;
+                case 2:
+                    return;
+            }
+        }
+        else {
+            if (buttonIndex == 2) {
+                return;
+            } else {
+                sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            }
+        }
+        // 跳转到相机或相册页面
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.delegate = self;
+        imagePickerController.allowsEditing = YES;
+        imagePickerController.sourceType = sourceType;
+        
+        [self presentViewController:imagePickerController animated:YES completion:^{
+            
+        }];
+    }
 }
 /*
 #pragma mark - Navigation

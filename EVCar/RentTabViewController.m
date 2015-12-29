@@ -68,7 +68,7 @@
     [_tableView.tableFooterView setHidden:YES];
 
     [_tableView registerNib:[UINib nibWithNibName:@"RentTabViewCell" bundle:nil] forCellReuseIdentifier:@"RentCell"];
-    data = [NSMutableArray arrayWithObjects:@{@"image":@"main_map_rent",@"title":@"暂无",@"detail":@"距离您最近的租赁点"}, @{@"image":@"main_map_rent2",@"title":@"",@"detail":@"距离您最近的充电桩"}, @{@"image":@"main_map_search",@"title":@"查找更多租赁点或充电桩"},nil];
+    data = [NSMutableArray arrayWithObjects:@{@"image":@"main_map_rent",@"title":@"包河南翔汽车城02",@"detail":@"距离您最近的租赁点"}, @{@"image":@"main_map_rent2",@"title":@"",@"detail":@"距离您最近的充电桩"}, @{@"image":@"main_map_search",@"title":@"查找更多租赁点或充电桩"},nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

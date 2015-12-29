@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
-@interface PhoneUserInfoViewController : BaseViewController<UITextFieldDelegate>
+@interface PhoneUserInfoViewController : BaseViewController<UITextFieldDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 
 @end

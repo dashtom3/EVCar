@@ -8,6 +8,7 @@
 
 #import "OrderTabViewController.h"
 #import "RentTabViewCell.h"
+#import "OrderDetailViewController.h"
 @interface OrderTabViewController (){
     NSArray *data;
     int segmentNumber;
@@ -29,7 +30,7 @@
     [_tableView.tableFooterView setHidden:YES];
     
     [_tableView registerNib:[UINib nibWithNibName:@"RentTabViewCell" bundle:nil] forCellReuseIdentifier:@"RentCell"];
-    data = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@{@"title":@"沪DT2010",@"detail":@"2015年10月24日",@"type":@"1"}, @{@"title":@"沪DT2010",@"detail":@"2015年10月30日",@"type":@"0"}, @{@"title":@"沪DT2010",@"detail":@"2015年10月25日",@"type":@"2"}, nil],[NSArray arrayWithObjects:@{@"title":@"充电桩2014",@"detail":@"2015年10月25日",@"type":@"2"}, @{@"title":@"充电桩2022",@"detail":@"2015年10月25日",@"type":@"0"}, @{@"title":@"充电桩1014",@"detail":@"2015年10月25日",@"type":@"0"}, @{@"title":@"充电桩1014",@"detail":@"2015年10月23日",@"type":@"1"},nil],nil];
+    data = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@{@"title":@"皖AT2010",@"detail":@"2015年10月24日",@"type":@"1"}, @{@"title":@"皖AT2010",@"detail":@"2015年10月30日",@"type":@"0"}, @{@"title":@"皖AT2010",@"detail":@"2015年10月25日",@"type":@"2"}, nil],[NSArray arrayWithObjects:@{@"title":@"充电桩2014",@"detail":@"2015年10月25日",@"type":@"2"}, @{@"title":@"充电桩2022",@"detail":@"2015年10月25日",@"type":@"0"}, @{@"title":@"充电桩1014",@"detail":@"2015年10月25日",@"type":@"0"}, @{@"title":@"充电桩1014",@"detail":@"2015年10月23日",@"type":@"1"},nil],nil];
     // Do any additional setup after loading the view.
 }
 
@@ -73,6 +74,8 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    OrderDetailViewController *odvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"orderDetail"];
+    odvc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:odvc animated:YES];
 }
 @end

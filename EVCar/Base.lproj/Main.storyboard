@@ -595,6 +595,40 @@
             </objects>
             <point key="canvasLocation" x="2551.5" y="756.5"/>
         </scene>
+        <!--Order Detail View Controller-->
+        <scene sceneID="TPt-rP-Di5">
+            <objects>
+                <viewController storyboardIdentifier="orderDetail" id="P1E-38-sru" customClass="OrderDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ux6-kJ-5tL"/>
+                        <viewControllerLayoutGuide type="bottom" id="7em-TR-7oe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Cg-MO-CGv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="mSw-na-tXm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mSw-na-tXm" secondAttribute="trailing" id="R9g-eV-J9I"/>
+                            <constraint firstAttribute="bottom" secondItem="mSw-na-tXm" secondAttribute="bottom" id="cmB-qU-Wzf"/>
+                            <constraint firstItem="mSw-na-tXm" firstAttribute="leading" secondItem="7Cg-MO-CGv" secondAttribute="leading" id="rdv-li-Ywb"/>
+                            <constraint firstItem="mSw-na-tXm" firstAttribute="top" secondItem="7Cg-MO-CGv" secondAttribute="top" id="zXJ-GZ-LJO"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="mSw-na-tXm" id="Kvt-Fe-HOb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qrj-sG-Oyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2951.5" y="756.5"/>
+        </scene>
         <!--Phone User Info View Controller-->
         <scene sceneID="mey-SF-waR">
             <objects>
@@ -689,6 +723,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="uploadUserPic:" destination="IN0-zg-US0" eventType="touchUpInside" id="gB0-lg-OEN"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfN-3f-6p2">
                                 <rect key="frame" x="0.0" y="328" width="375" height="1"/>

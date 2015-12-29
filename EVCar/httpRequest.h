@@ -19,6 +19,11 @@
          parameters:(id)parameters
             success:(void (^)(id responseObject))success
             failure:(void(^)(NSError *error))failure;
+-(void)userRegister:(NSString *)URLString
+           WithFile:(UIImage *)image
+     WithParameters:(id)parameters
+            success:(void (^)(id responseObject))success
+            failure:(void(^)(NSError *error))failure;
 //用户登录 phonenum=138XXXX2345&password=123456
 //成功：{“code”：“00”，“message”：“success”，“UserId”：“123445”，“token”：“xxx123456”，“certification”：“01”， “username”：“张三”，“phonenum”:”139xxxx0090”}
 -(void)userLogin:(NSString *)URLString

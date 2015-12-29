@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12066BC61C32DAB100C6F1E3 /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12066BC51C32DAB100C6F1E3 /* OrderDetailViewController.m */; };
 		1226087E1C20405D007D07BD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1226087D1C20405D007D07BD /* WebViewController.m */; };
 		122608811C2653C3007D07BD /* PhoneForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122608801C2653C3007D07BD /* PhoneForgetViewController.m */; };
 		122608841C2662FC007D07BD /* UserHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122608831C2662FC007D07BD /* UserHelpViewController.m */; };
@@ -74,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12066BC41C32DAB100C6F1E3 /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
+		12066BC51C32DAB100C6F1E3 /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
 		1226087C1C20405D007D07BD /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		1226087D1C20405D007D07BD /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		1226087F1C2653C3007D07BD /* PhoneForgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneForgetViewController.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				1255957E1C022D0800C50568 /* PileViewController.m */,
 				122608821C2662FC007D07BD /* UserHelpViewController.h */,
 				122608831C2662FC007D07BD /* UserHelpViewController.m */,
+				12066BC41C32DAB100C6F1E3 /* OrderDetailViewController.h */,
+				12066BC51C32DAB100C6F1E3 /* OrderDetailViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				122608841C2662FC007D07BD /* UserHelpViewController.m in Sources */,
 				12B54E561BDB653900D2D14F /* BaseViewController.m in Sources */,
 				1280E89E1BE229AA00F7B4BE /* SearchView.m in Sources */,
+				12066BC61C32DAB100C6F1E3 /* OrderDetailViewController.m in Sources */,
 				12A3F5121BD8D8DA00A4EB75 /* WaitingAnimation.m in Sources */,
 				1255957A1C02285100C50568 /* PileView.m in Sources */,
 				129D5BF01BD6233D001CBD69 /* EVCar.xcdatamodeld in Sources */,
