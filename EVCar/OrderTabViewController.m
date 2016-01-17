@@ -9,6 +9,7 @@
 #import "OrderTabViewController.h"
 #import "RentTabViewCell.h"
 #import "OrderDetailViewController.h"
+#import "httpRequest.h"
 @interface OrderTabViewController (){
     NSArray *data;
     int segmentNumber;
@@ -30,7 +31,7 @@
     [_tableView.tableFooterView setHidden:YES];
     
     [_tableView registerNib:[UINib nibWithNibName:@"RentTabViewCell" bundle:nil] forCellReuseIdentifier:@"RentCell"];
-    data = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@{@"title":@"皖AT2010",@"detail":@"2015年10月24日",@"type":@"1"}, @{@"title":@"皖AT2010",@"detail":@"2015年10月30日",@"type":@"0"}, @{@"title":@"皖AT2010",@"detail":@"2015年10月25日",@"type":@"2"}, nil],[NSArray arrayWithObjects:@{@"title":@"充电桩2014",@"detail":@"2015年10月25日",@"type":@"2"}, @{@"title":@"充电桩2022",@"detail":@"2015年10月25日",@"type":@"0"}, @{@"title":@"充电桩1014",@"detail":@"2015年10月25日",@"type":@"0"}, @{@"title":@"充电桩1014",@"detail":@"2015年10月23日",@"type":@"1"},nil],nil];
+    data = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@{@"ORDER_NAME":@"暂无",@"RESERVE_STARTTIME":@"",@"type":@"3"}, nil],[NSArray arrayWithObjects:@{@"ORDER_NAME":@"暂无",@"RESERVE_STARTTIME":@"",@"type":@"3"},nil],nil];
     // Do any additional setup after loading the view.
 }
 
@@ -55,6 +56,42 @@
     
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
 }
+-(void)setData:(NSArray *)orderData{
+    NSMutableArray *carOrder = [[NSMutableArray alloc]init];
+    NSMutableArray *chargerOrder = [[NSMutableArray alloc]init];
+    for(int i=0;i<orderData.count;i++){
+        if([[orderData[i] valueForKey:@"ORDER_TYPE"] intValue] == 0){
+            [chargerOrder addObject:orderData[i]];
+        }else{
+            [carOrder addObject:orderData[i]];
+        }
+    }
+    if(!carOrder.count){
+        carOrder = [NSMutableArray arrayWithObjects:@{@"ORDER_NAME":@"暂无",@"RESERVE_STARTTIME":@"",@"type":@"3"}, nil];
+    }
+    if(!chargerOrder.count){
+        chargerOrder = [NSMutableArray arrayWithObjects:@{@"ORDER_NAME":@"暂无",@"RESERVE_STARTTIME":@"",@"type":@"3"}, nil];
+    }
+    data = [NSArray arrayWithObjects:carOrder,chargerOrder, nil];
+    [_tableView reloadData];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    self.waitingAnimation = [[WaitingAnimation alloc]initWithNum:0 WithMainFrame:self.view.frame];
+    [self.view addSubview:self.waitingAnimation];
+    [self.waitingAnimation startAnimation];
+    httpRequest *hr = [[httpRequest alloc]init];
+    [hr getAllOrders:nil parameters:@{@"userId":[[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"UserId"],@"token":[[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"token"]} success:^(id responseObject) {
+        [self.waitingAnimation stopAnimation];
+        if([[responseObject valueForKey:@"code"] isEqualToString:@"00"]){
+            [self setData:[responseObject valueForKey:@"userOrders"]];
+        }else{
+            [self showAlertView:@"获取订单信息失败"];
+        }
+    } failure:^(NSError *error) {
+        [self.waitingAnimation stopAnimation];
+        [self showAlertView:@"获取订单信息失败"];
+    }];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return ((NSArray *)data[segmentNumber]).count;
 }
@@ -67,15 +104,24 @@
     RentTabViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RentCell"];
     if(cell){
         NSString *image = segmentNumber != 1 ? @"main_map_rent" : @"main_map_rent2" ;
-        [cell setValueWithImage:image WithTitle:[data[segmentNumber][indexPath.row] valueForKey:@"title"] WithDetail:[data[segmentNumber][indexPath.row] valueForKey:@"detail"]];
-        [cell setRentState:[data[segmentNumber][indexPath.row] valueForKey:@"type"]];
+        if(((NSString *)[data[segmentNumber][indexPath.row] valueForKey:@"RESERVE_STARTTIME"]).length >5){
+        [cell setValueWithImage:image WithTitle:[data[segmentNumber][indexPath.row] valueForKey:@"ORDER_NAME"] WithDetail:[[data[segmentNumber][indexPath.row] valueForKey:@"RESERVE_STARTTIME"] substringToIndex:10]];
+        }else{
+            [cell setValueWithImage:image WithTitle:[data[segmentNumber][indexPath.row] valueForKey:@"ORDER_NAME"] WithDetail:[data[segmentNumber][indexPath.row] valueForKey:@"RESERVE_STARTTIME"]];
+        }
+        //[cell setRentState:[data[segmentNumber][indexPath.row] valueForKey:@"type"]];
+        [cell setRentState:@"3"];
     }
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    OrderDetailViewController *odvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"orderDetail"];
-    odvc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:odvc animated:YES];
+    if([data[segmentNumber][indexPath.row] valueForKey:@"USER_ID"]){
+        OrderDetailViewController *odvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"orderDetail"];
+        [odvc setDataSet:data[segmentNumber][indexPath.row]];
+        odvc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:odvc animated:YES];
+         odvc.hidesBottomBarWhenPushed = NO;
+    }
 }
 @end

@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 #import "RentView.h"
 @interface RentViewController : BaseViewController<carAlertViewDelegate,UIScrollViewDelegate>
-@property (nonatomic) NSArray *data;
+@property (nonatomic) NSMutableDictionary *data;
 @end

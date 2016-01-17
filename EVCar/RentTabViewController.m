@@ -12,17 +12,23 @@
 #import "RentViewController.h"
 #import "SearchViewController.h"
 #import "PileViewController.h"
+#import "CarPointAnnotation.h"
+#import "ChargerPointAnnotation.h"
 @interface RentTabViewController (){
     NSMutableArray *data;
-    NSMutableArray *mapData;
-    NSMutableDictionary *mapNear;
+    NSMutableArray *mapCarData;
+    NSMutableArray *mapChargerData;
+    NSMutableDictionary *mapCarNear;
+    NSMutableDictionary *mapChargerNear;
     BMKMapManager* _mapManager;
     BMKMapView *mapView2;
     BMKLocationService* locService;
     BMKUserLocation *userLocate;
     Boolean mapLocationFirstUpdate;
+    BMKPointAnnotation *selectedAnnotation;
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIButton *btnRentOrder;
 
 
 
@@ -68,15 +74,17 @@
     [_tableView.tableFooterView setHidden:YES];
 
     [_tableView registerNib:[UINib nibWithNibName:@"RentTabViewCell" bundle:nil] forCellReuseIdentifier:@"RentCell"];
-    data = [NSMutableArray arrayWithObjects:@{@"image":@"main_map_rent",@"title":@"包河南翔汽车城02",@"detail":@"距离您最近的租赁点"}, @{@"image":@"main_map_rent2",@"title":@"",@"detail":@"距离您最近的充电桩"}, @{@"image":@"main_map_search",@"title":@"查找更多租赁点或充电桩"},nil];
+    data = [NSMutableArray arrayWithObjects:@{@"image":@"main_map_rent",@"title":@"暂无",@"detail":@"距离您最近的租赁点"}, @{@"image":@"main_map_rent2",@"title":@"暂无",@"detail":@"距离您最近的充电桩"}, @{@"image":@"main_map_search",@"title":@"查找更多租赁点或充电桩"},nil];
+    
+    _btnRentOrder.layer.cornerRadius = 6.0f;
+    _btnRentOrder.layer.borderWidth = 1;
+    _btnRentOrder.layer.borderColor = [UIColor borderColor2].CGColor;
+    [self.view bringSubviewToFront:_btnRentOrder];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    
-    
     [self startLocation];
     [self setNavgationControllerLineShow];
-    //[self getCarInfo];
     [self getChargerInfo];
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -84,6 +92,12 @@
     mapLocationFirstUpdate = true;
     mapView2.delegate = self;
     locService.delegate = self;
+    if(selectedAnnotation){
+        _btnRentOrder.alpha = 1.0;
+    }else{
+        _btnRentOrder.alpha = 0.0;
+    }
+    
 }
 -(void)startLocation{
     [locService startUserLocationService];
@@ -92,20 +106,48 @@
     mapView2.showsUserLocation = YES;//显示定位图层
 }
 //获取所有车点、桩点信息
--(void)getCarInfo{
+- (IBAction)rentOrder:(id)sender {
+    if(selectedAnnotation){
+        if([selectedAnnotation isKindOfClass:[ChargerPointAnnotation class]]){
+            PileViewController *pvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"pileView"];
+            pvc.data = ((ChargerPointAnnotation *)selectedAnnotation).data;
+            pvc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController: pvc animated:YES];
+            pvc.hidesBottomBarWhenPushed = NO;
+        }
+        if([selectedAnnotation isKindOfClass:[CarPointAnnotation class]]){
+            [self goToCarViews:((CarPointAnnotation *)selectedAnnotation).data];
+        }
+    }
+    
+}
+-(void)goToCarViews:(NSMutableDictionary *)carData{
+    self.waitingAnimation = [[WaitingAnimation alloc]initWithNum:0 WithMainFrame:self.view.frame];
+    [self.view addSubview:self.waitingAnimation];
+    [self.waitingAnimation startAnimation];
     httpRequest *hr = [[httpRequest alloc]init];
-    [hr getAllCarPark:nil parameters:@{@"userId":[[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"UserId"],@"token":[[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"token"]} success:^(id responseObject) {
+    [hr getAlllCarInParkInfo:nil parameters:@{@"userId":[[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"UserId"],@"token":[[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"token"],@"regionId":[carData valueForKey:@"locationId"]} success:^(id responseObject) {
         [self.waitingAnimation stopAnimation];
         if([[responseObject valueForKey:@"code"] isEqualToString:@"00"]){
-            
+            NSData *data2 = [[responseObject valueForKey:@"evCarInfo"] dataUsingEncoding :NSUTF8StringEncoding];
+            NSArray *jsonData = [NSJSONSerialization JSONObjectWithData:data2 options:NSJSONReadingMutableContainers error:nil];
+            if(jsonData.count<1){
+                [self showAlertView:@"该租车点没有可租汽车"];
+            }else {
+                RentViewController *rvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"rentView"];
+                rvc.data = [NSMutableDictionary dictionaryWithDictionary:@{@"title":carData,@"data":jsonData}];
+                rvc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController: rvc animated:YES];
+                rvc.hidesBottomBarWhenPushed = NO;
+            }
         }else{
-            [self showAlertView:@"获取租车点信息失败"];
+            [self showAlertView:@"获取汽车信息失败"];
         }
-
     } failure:^(NSError *error) {
         [self.waitingAnimation stopAnimation];
-        [self showAlertView:@"获取租车点信息失败"];
+        [self showAlertView:@"获取汽车信息失败"];
     }];
+
 }
 -(void)getChargerInfo{
     self.waitingAnimation = [[WaitingAnimation alloc]initWithNum:0 WithMainFrame:self.view.frame];
@@ -113,28 +155,54 @@
     [self.waitingAnimation startAnimation];
     httpRequest *hr = [[httpRequest alloc]init];
     [hr getAllChargerParkInfo:nil parameters:nil success:^(id responseObject) {
-        [self.waitingAnimation stopAnimation];
         if([[responseObject valueForKey:@"code"] isEqualToString:@"00"]){
-            mapData = [responseObject valueForKey:@"terminals"];
+            mapChargerData = [responseObject valueForKey:@"terminals"];
             if(userLocate){
-                [self setMapNear];
+                [self setMapNearWithType:0];
             }
             //画到地图上
-            for(int i=0;i<mapData.count;i++){
-                if([mapData[i] valueForKey:@"Lat"] != [NSNull null]){
-                    BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+            for(int i=0;i<mapChargerData.count;i++){
+                if([mapChargerData[i] valueForKey:@"Lat"] != [NSNull null]){
+                    ChargerPointAnnotation * annotation = [[ChargerPointAnnotation alloc]init];
                     CLLocationCoordinate2D coor;
-                    coor.latitude = [[mapData[i] valueForKey:@"Lat"] floatValue];
-                    coor.longitude = [[mapData[i] valueForKey:@"Lng"] floatValue];
+                    coor.latitude = [[mapChargerData[i] valueForKey:@"Lat"] floatValue];
+                    coor.longitude = [[mapChargerData[i] valueForKey:@"Lng"] floatValue];
                     annotation.coordinate = coor;
-                    NSString *li = @"不可用";
-                    if([[mapData[i] valueForKey:@"TerminalState"] intValue] == 1){
-                         li= @"可用";
-                    }
-                    annotation.title = [NSString stringWithFormat:@"%@ %@",[mapData[i] valueForKey:@"TerminalName"] , li];
+                    annotation.data = mapChargerData[i];
+                    annotation.title = [NSString stringWithFormat:@"%@",[mapChargerData[i] valueForKey:@"TerminalName"]];
                     [mapView2 addAnnotation:annotation];
                 }
             }
+            [hr getAllCarParkInfo:nil parameters:@{@"userId":[[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"UserId"],@"token":[[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"token"]} success:^(id responseObject) {
+                [self.waitingAnimation stopAnimation];
+                if([[responseObject valueForKey:@"code"] isEqualToString:@"00"]){
+                    
+                    NSData *data2 = [[responseObject valueForKey:@"evCarLocation"] dataUsingEncoding :NSUTF8StringEncoding];
+                    mapCarData = [NSJSONSerialization JSONObjectWithData:data2 options:NSJSONReadingMutableContainers error:nil];
+                    
+                    if(userLocate){
+                        [self setMapNearWithType:1];
+                    }
+                    //画到地图上
+                    for(int i=0;i<mapCarData.count;i++){
+                        if([mapCarData[i] valueForKey:@"latitude"] != [NSNull null]){
+                            CarPointAnnotation * annotation = [[CarPointAnnotation alloc]init];
+                            CLLocationCoordinate2D coor;
+                            coor.latitude = [[mapCarData[i] valueForKey:@"latitude"] floatValue];
+                            coor.longitude = [[mapCarData[i] valueForKey:@"longitude"] floatValue];
+                            annotation.coordinate = coor;
+                            annotation.data = mapCarData[i];
+                            annotation.title = [NSString stringWithFormat:@"%@",[mapCarData[i] valueForKey:@"locationName"]];
+                            [mapView2 addAnnotation:annotation];
+                        }
+                    }
+                }else{
+                    [self showAlertView:@"获取租车点信息失败"];
+                }
+            } failure:^(NSError *error) {
+                [self.waitingAnimation stopAnimation];
+                [self showAlertView:@"获取租车点信息失败"];
+            }];
         }else{
             [self showAlertView:@"获取租车点信息失败"];
         }
@@ -147,12 +215,57 @@
     mapView2.delegate = nil;
     locService.delegate = nil;
 }
+-(void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
+    if([view.annotation isKindOfClass:[CarPointAnnotation class]]){
+        if([[((CarPointAnnotation *)view.annotation).data valueForKey:@"status"] intValue]==1){
+            _btnRentOrder.alpha = 1.0;
+            [self.view bringSubviewToFront:_btnRentOrder];
+            selectedAnnotation = view.annotation;
+        }else{
+            _btnRentOrder.alpha = 0.0;
+        }
+        
+    }
+    if([view.annotation isKindOfClass:[ChargerPointAnnotation class]]){
+        if([[((ChargerPointAnnotation *)view.annotation).data valueForKey:@"TerminalState"] intValue]==1){
+            _btnRentOrder.alpha = 1.0;
+            [self.view bringSubviewToFront:_btnRentOrder];
+            selectedAnnotation = view.annotation;
+        }else{
+            _btnRentOrder.alpha = 0.0;
+        }
+    }
+}
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
 {
-    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
+    if ([annotation isKindOfClass:[ChargerPointAnnotation class]]) {
+//    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
         BMKPinAnnotationView *newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
         newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
         newAnnotationView.animatesDrop = YES;// 设置该标注点动画显示
+        if(((CarPointAnnotation *)annotation).data){
+            NSMutableDictionary *data2 = ((CarPointAnnotation *)annotation).data;
+            if([[data2 valueForKey:@"TerminalState"] intValue] == 1){
+                newAnnotationView.image = [UIImage imageNamed:@"charger_yes"];
+            }else{
+                newAnnotationView.image = [UIImage imageNamed:@"charger_no"];
+            }
+        }
+        return newAnnotationView;
+    }
+    if ([annotation isKindOfClass:[CarPointAnnotation class]]) {
+        //    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
+        BMKPinAnnotationView *newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
+        newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
+        newAnnotationView.animatesDrop = YES;// 设置该标注点动画显示
+        if(((CarPointAnnotation *)annotation).data){
+            NSMutableDictionary *data2 = ((CarPointAnnotation *)annotation).data;
+            if([[data2 valueForKey:@"status"] intValue] == 1){
+                newAnnotationView.image = [UIImage imageNamed:@"car_yes"];
+            }else{
+                newAnnotationView.image = [UIImage imageNamed:@"car_no"];
+            }
+        }
         return newAnnotationView;
     }
     return nil;
@@ -176,13 +289,22 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(indexPath.row == 0){
-        [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"rentView"] animated:YES];
+        if([[mapCarNear valueForKey:@"status"] intValue] == 1){
+            [self goToCarViews:mapCarNear];
+        }else{
+            [self showAlertView:@"最近的租车点已不可用,详情请查看地图"];
+        }
+        
     }else if(indexPath.row == 1){
-        PileViewController *pvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"pileView"];
-        pvc.data = mapNear;
-        pvc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController: pvc animated:YES];
-        pvc.hidesBottomBarWhenPushed = NO;
+        if([[mapChargerNear valueForKey:@"TerminalState"] intValue] == 1){
+            PileViewController *pvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"pileView"];
+            pvc.data = mapChargerNear;
+            pvc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController: pvc animated:YES];
+            pvc.hidesBottomBarWhenPushed = NO;
+        }else{
+            [self showAlertView:@"最近的充电桩已不可用,详情请查看地图"];
+        }
     }else{
         [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"searchView"] animated:YES];
     }
@@ -192,15 +314,27 @@
     return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
 }
 //得到最近的点
--(NSDictionary *)getNearWithLat:(float) lat WithLng:(float) lng{
+-(NSMutableDictionary *)getNearWithLat:(float) lat WithLng:(float) lng WithType:(int )type{
     float minimun = -1;
-    NSDictionary * result;
-    for(int i=0;i<mapData.count;i++){
-        if([mapData[i] valueForKey:@"Lat"] && (NSNull *)[mapData[i] valueForKey:@"Lat"] != [NSNull null]){
-            float dis = [self getDistanceWithX1:[[mapData[i] valueForKey:@"Lat"] floatValue] Y1:[[mapData[i] valueForKey:@"Lng"] floatValue] X2:lat Y2:lng];
+    NSMutableDictionary * result;
+    if(type==0){
+    for(int i=0;i<mapChargerData.count;i++){
+        if([mapChargerData[i] valueForKey:@"Lat"] && (NSNull *)[mapChargerData[i] valueForKey:@"Lat"] != [NSNull null]){
+            float dis = [self getDistanceWithX1:[[mapChargerData[i] valueForKey:@"Lat"] floatValue] Y1:[[mapChargerData[i] valueForKey:@"Lng"] floatValue] X2:lat Y2:lng];
             if(minimun == -1 || dis < minimun){
-                result = mapData[i];
+                result = mapChargerData[i];
                 minimun = dis;
+            }
+        }
+    }
+    }else{
+        for(int i=0;i<mapCarData.count;i++){
+            if([mapCarData[i] valueForKey:@"latitude"] && (NSNull *)[mapCarData[i] valueForKey:@"latitude"] != [NSNull null]){
+                float dis = [self getDistanceWithX1:[[mapCarData[i] valueForKey:@"latitude"] floatValue] Y1:[[mapCarData[i] valueForKey:@"longitude"] floatValue] X2:lat Y2:lng];
+                if(minimun == -1 || dis < minimun){
+                    result = mapCarData[i];
+                    minimun = dis;
+                }
             }
         }
     }
@@ -234,21 +368,34 @@
     //    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
     [mapView2 updateLocationData:userLocation];
     userLocate = userLocation;
-    if(mapData){
-        [self setMapNear];
+    if(mapChargerData){
+        [self setMapNearWithType:0];
+    }
+    if(mapCarData){
+        [self setMapNearWithType:1];
     }
     if(mapLocationFirstUpdate == true){
         [mapView2 setCenterCoordinate:userLocation.location.coordinate];
         mapLocationFirstUpdate = false;
     }
 }
--(void)setMapNear{
-    mapNear = [self getNearWithLat:userLocate.location.coordinate.latitude WithLng:userLocate.location.coordinate.longitude];
-    NSMutableDictionary *b = [data[1] mutableCopy];
-    [b setObject:[mapNear valueForKey:@"TerminalName"] forKey:@"title"];
-    [data removeObjectAtIndex:1];
-    [data insertObject:b atIndex:1];
-    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:1 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
+-(void)setMapNearWithType:(int)type{
+    if(type==0){
+        mapChargerNear = [self getNearWithLat:userLocate.location.coordinate.latitude WithLng:userLocate.location.coordinate.longitude WithType:type];
+        NSMutableDictionary *b = [data[1] mutableCopy];
+        [b setObject:[mapChargerNear valueForKey:@"TerminalName"] forKey:@"title"];
+        [data removeObjectAtIndex:1];
+        [data insertObject:b atIndex:1];
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:1 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
+    }else{
+        mapCarNear = [self getNearWithLat:userLocate.location.coordinate.latitude WithLng:userLocate.location.coordinate.longitude WithType:type];
+        NSMutableDictionary *b = [data[0] mutableCopy];
+        [b setObject:[mapCarNear valueForKey:@"locationName"] forKey:@"title"];
+        [data removeObjectAtIndex:0];
+        [data insertObject:b atIndex:0];
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
+    }
+    
 }
 /**
  *在地图View停止定位后，会调用此函数

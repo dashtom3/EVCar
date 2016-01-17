@@ -8,6 +8,8 @@
 
 #import "PileViewController.h"
 #import "PileView.h"
+#import "httpRequest.h"
+#import "DateAnalyse.h"
 @interface PileViewController ()
 
 @end
@@ -45,9 +47,24 @@
     [self setNavgationControllerLine];
     [self hideTabBar];
 }
--(void)showAlertView:(NSArray *)data{
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"预约成功" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    [alertView show];
+-(void)showOrderView:(NSArray *)data{
+    self.waitingAnimation = [[WaitingAnimation alloc]initWithNum:0 WithMainFrame:self.view.frame];
+    [self.view addSubview:self.waitingAnimation];
+    [self.waitingAnimation startAnimation];
+    httpRequest *hr = [[httpRequest alloc]init];
+    DateAnalyse *da= [[DateAnalyse alloc]init];
+    [hr generateOrder:nil parameters:@{@"userId":[[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"UserId"],@"token":[[[NSUserDefaults standardUserDefaults] valueForKey:@"user"] valueForKey:@"token"],@"terminalId":[_data valueForKey:@"TerminalId"],@"measPointId":@"0",@"reserveStartTime":[da dateTostr:[NSDate date]],@"usageTime":@"8.0",@"orderType":@"0"} success:^(id responseObject) {
+        [self.waitingAnimation stopAnimation];
+        if([[responseObject valueForKey:@"code"] isEqualToString:@"00"]){
+            [self showAlertView:@"预订成功"];
+        }else{
+            [self showAlertView:@"设备已经预定"];
+        }
+        
+    } failure:^(NSError *error) {
+        [self.waitingAnimation stopAnimation];
+        [self showAlertView:@"预定服务网络调用失败"];
+    }];
     [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)backToMainView{

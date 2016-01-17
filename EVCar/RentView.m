@@ -22,10 +22,15 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:@"RentViewCell" bundle:nil] forCellReuseIdentifier:@"RentViewCell"];
-    _data = [NSArray arrayWithObjects:@{@"image":@"car_name",@"title":@"车辆型号",@"detail":@"启辰T70"}, @{@"image":@"car_distance",@"title":@"续航里程",@"detail":@"21公里"}, @{@"image":@"car_number",@"title":@"车牌号",@"detail":@"沪FY0676"},@{@"image":@"car_times",@"title":@"租借次数",@"detail":@"19 次"},nil];
+    _data = [NSArray arrayWithObjects:@{@"image":@"car_name",@"title":@"车辆名称",@"detail":@"启辰T70"}, @{@"image":@"car_distance",@"title":@"续航里程",@"detail":@"21公里"}, @{@"image":@"car_number",@"title":@"车牌号",@"detail":@""},@{@"image":@"car_times",@"title":@"租借次数",@"detail":@"19 次"},nil];
 }
 - (IBAction)rentCar:(id)sender {
-    [_delegate showAlertView:_data];
+    [_delegate orderCarView:_data2];
+}
+-(void)setData:(NSDictionary *)data{
+    _data = [NSArray arrayWithObjects:@{@"image":@"car_name",@"title":@"车辆名称",@"detail":[data valueForKey:@"Car_Name"]}, @{@"image":@"car_distance",@"title":@"续航里程",@"detail":@"21公里"}, @{@"image":@"car_number",@"title":@"车牌号",@"detail":[data valueForKey:@"License_Plate"]},@{@"image":@"car_times",@"title":@"租借次数",@"detail":@"19 次"},nil];
+    _data2 = data;
+    [_tableView reloadData];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 4;

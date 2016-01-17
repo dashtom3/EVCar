@@ -52,6 +52,11 @@
             _imageMap.alpha = 1;
             break;
         }
+        case 3:{
+            _labelRentState.text = @"";
+            _labelRentState.textColor = [UIColor redColor];
+            _imageMap.alpha = 1;
+        }
         default:
             break;
     }

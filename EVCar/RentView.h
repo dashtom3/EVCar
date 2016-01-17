@@ -7,7 +7,7 @@
 //
 @protocol carAlertViewDelegate
 
--(void)showAlertView:(NSArray *)data;
+-(void)orderCarView:(NSDictionary *)data;
 
 @end
 #import <UIKit/UIKit.h>
@@ -15,7 +15,9 @@
 @interface RentView : UIView<UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *data;
+@property (nonatomic) NSDictionary *data2;
 @property (strong, nonatomic) IBOutlet UIButton *btnRent;
 
 @property (nonatomic) id delegate;
+-(void)setData:(NSDictionary *)data;
 @end

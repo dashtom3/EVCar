@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface OrderDetailViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
-
+@property (nonatomic)    NSArray *data;
+-(void)setDataSet:(NSMutableDictionary *)dataSet;
 @end

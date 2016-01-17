@@ -17,10 +17,8 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 
     [manager POST:@"http://example.com/resources.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
         success(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
         failure(error);
     }];
 }
@@ -30,10 +28,8 @@
     failure:(void(^)(NSError *error))failure{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
         success(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
         failure(error);
     }];
 }
@@ -91,68 +87,7 @@ parameters:(id)parameters
         
     }];
 }
--(void) makePhotoUploadRequest{
-//    
-//    NSArray *keys = [[NSArray alloc]initWithObjects:@"UserID", @"CompanyName" ,@"Location",@"Latitude",@"Longitude",@"Tagline",@"Goals",@"ColorName",nil];
-//    NSArray *values =[[NSArray alloc]initWithObjects:@"103",@"queppelin",@"Jaiur",@"11.3" ,@"12.3",@"Let's do it",@"Let's do it",@"Let's do it", nil];
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-//    
-//    NSURL *baseUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@/%@/RegisterCompanyUser",serverRequest,serverPort,serverName]];
-//    
-//    NSString *charset = (NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
-//    [request setURL:baseUrl];
-//    [request setHTTPMethod:@"POST"];
-//    
-//    NSString *boundary = @"0xKhTmLbOuNdArY";
-//    NSString *endBoundary = [NSString stringWithFormat:@"\r\n--%@\r\n", boundary];
-//    
-//    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; charset=%@; boundary=%@", charset, boundary];
-//    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
-//    
-//    NSMutableData *tempPostData = [NSMutableData data];
-//    [tempPostData appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//    
-//    
-//    for(int i=0;i<keys.count;i++){
-//        NSString *str = values[i];
-//        NSString *key =keys[i];
-//        NSLog(@"Key Value pair: %@-%@",key,str);
-//        [tempPostData appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key] dataUsingEncoding:NSUTF8StringEncoding]];
-//        [tempPostData appendData:[str dataUsingEncoding:NSUTF8StringEncoding]];
-//        // [tempPostData appendData:[@"\r\n--%@\r\n",boundary dataUsingEncoding:NSUTF8StringEncoding]];
-//        [tempPostData appendData:[endBoundary dataUsingEncoding:NSUTF8StringEncoding]];
-//        
-//    }
-//    
-//    
-//    
-//    
-//    
-//    // Sample file to send as data
-//    [tempPostData appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"Image\"; filename=\"%@\"\r\n", @"company-logo.png"] dataUsingEncoding:NSUTF8StringEncoding]];
-//    [tempPostData appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-//    
-//    UIImage *myImageObj = [UIImage imageNamed:@"company-logo.png"];
-//    NSData *mydata= UIImagePNGRepresentation(myImageObj);
-//    NSLog(@"Image data:%d",mydata.length);
-//    [tempPostData appendData:mydata];
-//    
-//    [tempPostData appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//    [request setHTTPBody:tempPostData];
-//    
-//    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-//    if( theConnection )
-//    {
-//        dataWebService = [NSMutableData data] ;
-//        NSLog(@"request uploading successful");
-//    }
-//    else
-//    {
-//        NSLog(@"theConnection is NULL");
-//    }
-//    
-    
-}
+
 //用户登录 phonenum=138XXXX2345&password=123456
 //成功：{“code”：“00”，“message”：“success”，“UserId”：“123445”，“token”：“xxx123456”，“certification”：“01”， “username”：“张三”，“phonenum”:”139xxxx0090”}
 -(void)userLogin:(NSString *)URLString
@@ -206,19 +141,6 @@ parameters:(id)parameters
         failure(error);
     }];
 }
-//获取所有车点信息
--(void)getAllCarPark:(NSString *)URLString
-          parameters:(id)parameters
-             success:(void (^)(id responseObject))success
-             failure:(void(^)(NSError *error))failure{
-    [self GET:@"http://61.190.61.78/EVCharger/api/Car/GetAllRegion" parameters:parameters success:^(id responseObject){
-        NSLog(@"JSON: %@", responseObject);
-        success(responseObject);
-    }failure:^(NSError *error){
-        NSLog(@"Error: %@", error);
-        failure(error);
-    }];
-}
 //获取所有充电桩点信息
 -(void)getAllChargerPark:(NSString *)URLString
           parameters:(id)parameters
@@ -238,6 +160,58 @@ parameters:(id)parameters
                  success:(void (^)(id responseObject))success
                  failure:(void(^)(NSError *error))failure{
     [self GET:@"http://61.190.61.78/EVCharger/api/Charger/GetAllTerminalInfo" parameters:parameters success:^(id responseObject){
+        NSLog(@"JSON: %@", responseObject);
+        success(responseObject);
+    }failure:^(NSError *error){
+        NSLog(@"Error: %@", error);
+        failure(error);
+    }];
+}
+//获取所有汽车点信息
+-(void)getAllCarParkInfo:(NSString *)URLString
+                  parameters:(id)parameters
+                     success:(void (^)(id responseObject))success
+                     failure:(void(^)(NSError *error))failure{
+    [self GET:@"http://61.190.61.78/EVCharger/api/Car/GetAllCarRegion" parameters:parameters success:^(id responseObject){
+        NSLog(@"JSON: %@", responseObject);
+        success(responseObject);
+    }failure:^(NSError *error){
+        NSLog(@"Error: %@", error);
+        failure(error);
+    }];
+}
+//获取车点汽车信息
+-(void)getAlllCarInParkInfo:(NSString *)URLString
+              parameters:(id)parameters
+                 success:(void (^)(id responseObject))success
+                 failure:(void(^)(NSError *error))failure{
+    [self GET:@"http://61.190.61.78/EVCharger/api/Car/GetCarsByRegion" parameters:parameters success:^(id responseObject){
+        NSLog(@"JSON: %@", responseObject);
+        success(responseObject);
+    }failure:^(NSError *error){
+        NSLog(@"Error: %@", error);
+        failure(error);
+    }];
+}
+//生成订单
+-(void)generateOrder:(NSString *)URLString
+          parameters:(id)parameters
+             success:(void (^)(id responseObject))success
+             failure:(void(^)(NSError *error))failure{
+    [self GET:@"http://61.190.61.78/EVCharger/api/EVOrders/GenerateOrder" parameters:parameters success:^(id responseObject){
+        NSLog(@"JSON: %@", responseObject);
+        success(responseObject);
+    }failure:^(NSError *error){
+        NSLog(@"Error: %@", error);
+        failure(error);
+    }];
+}
+//获取用户所有订单
+-(void)getAllOrders:(NSString *)URLString
+          parameters:(id)parameters
+             success:(void (^)(id responseObject))success
+             failure:(void(^)(NSError *error))failure{
+    [self GET:@"http://61.190.61.78/EVCharger/api/EVOrders/GetOrdersByUserId" parameters:parameters success:^(id responseObject){
         NSLog(@"JSON: %@", responseObject);
         success(responseObject);
     }failure:^(NSError *error){

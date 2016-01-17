@@ -45,10 +45,6 @@
        parameters:(id)parameters
           success:(void (^)(id responseObject))success
           failure:(void(^)(NSError *error))failure;
--(void)getAllCarPark:(NSString *)URLString
-          parameters:(id)parameters
-             success:(void (^)(id responseObject))success
-             failure:(void(^)(NSError *error))failure;
 //获取所有充电桩点信息
 -(void)getAllChargerPark:(NSString *)URLString
               parameters:(id)parameters
@@ -59,4 +55,23 @@
                   parameters:(id)parameters
                      success:(void (^)(id responseObject))success
                      failure:(void(^)(NSError *error))failure;
+//获取所有汽车点信息
+-(void)getAllCarParkInfo:(NSString *)URLString
+              parameters:(id)parameters
+                 success:(void (^)(id responseObject))success
+                 failure:(void(^)(NSError *error))failure;
+-(void)getAlllCarInParkInfo:(NSString *)URLString
+                 parameters:(id)parameters
+                    success:(void (^)(id responseObject))success
+                    failure:(void(^)(NSError *error))failure;
+//生成订单
+-(void)generateOrder:(NSString *)URLString
+          parameters:(id)parameters
+             success:(void (^)(id responseObject))success
+             failure:(void(^)(NSError *error))failure;
+//获取用户所有订单
+-(void)getAllOrders:(NSString *)URLString
+         parameters:(id)parameters
+            success:(void (^)(id responseObject))success
+            failure:(void(^)(NSError *error))failure;
 @end

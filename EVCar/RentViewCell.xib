@@ -21,20 +21,19 @@
                             <constraint firstAttribute="height" constant="18" id="wFY-EH-REo"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-C3-JSy">
-                        <rect key="frame" x="66" y="21" width="120" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车辆名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRj-C3-JSy">
+                        <rect key="frame" x="66" y="21" width="70" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="73d-yG-Ffa"/>
-                            <constraint firstAttribute="width" constant="120" id="8wp-aA-mt7"/>
+                            <constraint firstAttribute="width" constant="70" id="8wp-aA-mt7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyN-rJ-9IZ">
-                        <rect key="frame" x="188" y="21" width="120" height="18"/>
+                        <rect key="frame" x="140" y="21" width="168" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="04w-0i-EjZ"/>
                             <constraint firstAttribute="height" constant="18" id="akY-VV-Tj2"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -66,6 +65,7 @@
                     <constraint firstAttribute="trailing" secondItem="ZjR-3f-GFq" secondAttribute="trailing" id="ZHR-er-YWk"/>
                     <constraint firstItem="6mH-C2-sUl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="fPG-YO-64a"/>
                     <constraint firstAttribute="trailing" secondItem="z5A-hd-XKw" secondAttribute="trailing" constant="12" id="fhw-Ry-Trq"/>
+                    <constraint firstItem="OyN-rJ-9IZ" firstAttribute="leading" secondItem="kRj-C3-JSy" secondAttribute="trailing" constant="4" id="gVd-eZ-rqr"/>
                     <constraint firstAttribute="centerY" secondItem="z5A-hd-XKw" secondAttribute="centerY" id="nnY-hm-OEi"/>
                     <constraint firstAttribute="centerY" secondItem="OyN-rJ-9IZ" secondAttribute="centerY" id="tud-bp-Vqn"/>
                 </constraints>

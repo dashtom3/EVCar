@@ -611,17 +611,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsi-Tv-A4X">
+                                <rect key="frame" x="16" y="611" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.50196078430000002" green="0.83921568629999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="oOo-6M-yNd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="支付订单">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="payOrder:" destination="P1E-38-sru" eventType="touchUpInside" id="CNE-h2-ueT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Gsi-Tv-A4X" secondAttribute="trailing" constant="16" id="QgZ-sv-969"/>
                             <constraint firstAttribute="trailing" secondItem="mSw-na-tXm" secondAttribute="trailing" id="R9g-eV-J9I"/>
                             <constraint firstAttribute="bottom" secondItem="mSw-na-tXm" secondAttribute="bottom" id="cmB-qU-Wzf"/>
+                            <constraint firstItem="Gsi-Tv-A4X" firstAttribute="leading" secondItem="7Cg-MO-CGv" secondAttribute="leading" constant="16" id="efL-6j-3TG"/>
+                            <constraint firstAttribute="bottom" secondItem="Gsi-Tv-A4X" secondAttribute="bottom" constant="8" id="fs9-am-YUg"/>
                             <constraint firstItem="mSw-na-tXm" firstAttribute="leading" secondItem="7Cg-MO-CGv" secondAttribute="leading" id="rdv-li-Ywb"/>
                             <constraint firstItem="mSw-na-tXm" firstAttribute="top" secondItem="7Cg-MO-CGv" secondAttribute="top" id="zXJ-GZ-LJO"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="btnPayOrder" destination="Gsi-Tv-A4X" id="LBo-UX-Tfl"/>
                         <outlet property="tableView" destination="mSw-na-tXm" id="Kvt-Fe-HOb"/>
                     </connections>
                 </viewController>
@@ -1040,16 +1059,35 @@
                                     <constraint firstAttribute="height" constant="254" id="0Az-7n-aHx"/>
                                 </constraints>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4w6-PH-4bk">
+                                <rect key="frame" x="319" y="417" width="48" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="Rd8-NK-8dV"/>
+                                    <constraint firstAttribute="height" constant="48" id="kwP-c1-EMb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="预约">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rentOrder:" destination="nZC-tZ-BNC" eventType="touchUpInside" id="Q7P-EQ-BLB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="3Ow-9T-MuJ" secondAttribute="bottom" id="DEs-LC-mRl"/>
+                            <constraint firstAttribute="trailing" secondItem="4w6-PH-4bk" secondAttribute="trailing" constant="8" id="HBy-Po-Mod"/>
+                            <constraint firstItem="3Ow-9T-MuJ" firstAttribute="top" secondItem="4w6-PH-4bk" secondAttribute="bottom" constant="-52" id="Oaa-Cn-e2x"/>
                             <constraint firstAttribute="trailing" secondItem="3Ow-9T-MuJ" secondAttribute="trailing" id="Ohh-7S-dfD"/>
                             <constraint firstItem="3Ow-9T-MuJ" firstAttribute="leading" secondItem="w2I-xU-2yT" secondAttribute="leading" id="t4p-0r-Ndk"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="btnRentOrder" destination="4w6-PH-4bk" id="DlI-bu-ov7"/>
                         <outlet property="tableView" destination="3Ow-9T-MuJ" id="yUi-vP-KwV"/>
                     </connections>
                 </viewController>

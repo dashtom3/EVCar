@@ -16,18 +16,21 @@
     _data = [NSMutableArray arrayWithObjects:@{@"image":@"pile_wait",@"title":@"前方等待",@"detail":@"9 辆"}, nil];
 }
 - (IBAction)rentCar:(id)sender {
-    [_delegate showAlertView:_data];
+    [_delegate showOrderView:_mapdata];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _data.count;
 }
 -(void)setData:(NSMutableDictionary *)value{
-    if([[value valueForKey:@"Terminal State"]intValue] == 1){
+    if([[value valueForKey:@"TerminalState"]intValue] == 1){
         [_data addObject:@{@"image":@"car_name",@"title":@"租赁状态",@"detail":@"可租"}];
+        _btnPile.enabled = true;
     }else{
         [_data addObject:@{@"image":@"car_name",@"title":@"租赁状态",@"detail":@"离线"}];
+        _btnPile.enabled = false;
     }
     [_data addObject:@{@"image":@"car_times",@"title":@"租赁地点",@"detail":[value valueForKey:@"DeptName"]}];
+    _mapdata = [NSArray arrayWithObjects: value,nil];
     [_tableView reloadData];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
